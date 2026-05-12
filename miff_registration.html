@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Media Registration | MIFF 2026</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+    <!-- Custom MIFF Style -->
+    <link rel="stylesheet" href="css/miff_style.css">
+</head>
+<body>
+    <div class="bg-gradient-overlay"></div>
+
+    <header class="miff-header">
+        <div class="container d-flex justify-content-between align-items-center">
+            <div class="d-flex align-items-center gap-3">
+                <a href="https://mib.gov.in" target="_blank">
+                    <img src="assets/logos/MIB.png" alt="MIB" style="height: 40px;">
+                </a>
+                <a href="#" class="miff-logo">
+                    <span>MIFF</span> 2026
+                </a>
+            </div>
+            <div class="d-flex align-items-center gap-3">
+                <a href="https://www.nfdcindia.com/" target="_blank" class="d-none d-md-block">
+                    <img src="assets/logos/NFDC (blue)-ai.png" alt="NFDC" style="height: 35px; filter: brightness(0) invert(1);">
+                </a>
+                <a href="miff_login.html" class="btn btn-miff-outline">Login</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Registration Section -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+                    <div class="miff-card">
+                        <div class="miff-card-header">
+                            <h2 class="miff-card-title">Media Registration Form</h2>
+                            <p class="text-white-50">Please fill in the details below to apply for media accreditation.</p>
+                        </div>
+
+                        <div class="note-box mb-4">
+                            <p class="text-danger fw-bold">Documents to be uploaded (JPEG/PDF)</p>
+                            <p class="small text-white-50">Size must be between 5KB and 3MB.</p>
+                        </div>
+
+                        <form>
+                            <div class="row g-4">
+                                <!-- Upload Fields -->
+                                <div class="col-md-6">
+                                    <label class="form-label">Photo ID Proof *</label>
+                                    <p class="small text-white-50 mb-2">(Aadhaar / License / Passport / Voter ID)</p>
+                                    <div class="input-group">
+                                        <input type="file" class="form-control">
+                                        <button class="btn btn-miff-outline" type="button">Upload</button>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <label class="form-label">Passport Size Photograph *</label>
+                                    <p class="small text-white-50 mb-2">Recent clear photograph</p>
+                                    <div class="input-group">
+                                        <input type="file" class="form-control">
+                                        <button class="btn btn-miff-outline" type="button">Upload</button>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <label class="form-label">Organisational ID *</label>
+                                    <p class="small text-white-50 mb-2">Official ID card of your media house</p>
+                                    <div class="input-group">
+                                        <input type="file" class="form-control">
+                                        <button class="btn btn-miff-outline" type="button">Upload</button>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <label class="form-label">Editor’s Nomination Letter *</label>
+                                    <p class="small text-white-50 mb-2">Or Self-Declaration for Freelancers</p>
+                                    <div class="input-group">
+                                        <input type="file" class="form-control">
+                                        <button class="btn btn-miff-outline" type="button">Upload</button>
+                                    </div>
+                                </div>
+
+                                <div class="col-12">
+                                    <div class="section-divider">
+                                        <span>Proof of Work</span>
+                                    </div>
+                                    <p class="mb-3 text-white-50">Upload a file with at least 5 samples of work (articles, photos, videos, links). Ensure byline is visible.</p>
+                                    
+                                    <div class="row align-items-end g-3 mb-3">
+                                        <div class="col-md-5">
+                                            <label class="form-label">Upload Document</label>
+                                            <input type="file" class="form-control">
+                                        </div>
+                                        <div class="col-md-5">
+                                            <label class="form-label">Or Add Links</label>
+                                            <div id="links-container">
+                                                <input type="url" class="form-control mb-2" placeholder="https://example.com/article">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-2">
+                                            <button type="button" class="btn btn-miff-outline w-100" id="add-link">
+                                                <i class="fas fa-plus me-1"></i> Add
+                                            </button>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="note-box py-2">
+                                        <p class="small">Note: If a byline is not visible, a certification letter from the Editor must be uploaded. <a href="#" class="text-gold" style="color: var(--miff-gold);">View Annexure A</a></p>
+                                    </div>
+                                </div>
+
+                                <!-- Declaration -->
+                                <div class="col-12 mt-4">
+                                    <div class="form-check custom-checkbox">
+                                        <input class="form-check-input" type="checkbox" id="declaration" required>
+                                        <label class="form-check-label text-white-50" for="declaration">
+                                            I certify that the above information and documents are true to the best of my knowledge. False or undefined claims may lead to disqualification.
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <!-- Submit -->
+                                <div class="col-12 text-center mt-5">
+                                    <button type="submit" class="btn btn-miff-primary py-3" style="max-width: 300px;">
+                                        Submit Accreditation Application
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="miff-footer">
+        <div class="container">
+            <p class="footer-text mb-2">&copy; 2026 Mumbai International Film Festival. All Rights Reserved.</p>
+            <p class="small text-white-50">Organized by National Film Development Corporation (NFDC), Ministry of Information & Broadcasting, Government of India.</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap 5 Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Dynamic link addition
+        document.getElementById('add-link').addEventListener('click', function() {
+            const container = document.getElementById('links-container');
+            const input = document.createElement('input');
+            input.type = 'url';
+            input.className = 'form-control mb-2';
+            input.placeholder = 'https://example.com/another-article';
+            container.appendChild(input);
+        });
+    </script>
+</body>
+</html>

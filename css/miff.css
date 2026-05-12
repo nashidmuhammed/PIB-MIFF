@@ -1,0 +1,243 @@
+:root {
+    /* Primary Colors */
+    --primary-h: 210;
+    --primary-s: 100%;
+    --primary-l: 50%;
+    --primary: hsl(var(--primary-h), var(--primary-s), var(--primary-l));
+    
+    /* MIFF Specific Palette */
+    --miff-gold: #D4AF37;
+    --miff-dark: #0A0A0A;
+    --miff-light: #F5F5F5;
+    --miff-accent: #3498db;
+    
+    /* Backgrounds */
+    --bg-dark: #0a0a0a;
+    --bg-card: rgba(255, 255, 255, 0.05);
+    --bg-glass: rgba(255, 255, 255, 0.1);
+    
+    /* Typography */
+    --font-main: 'Outfit', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+[data-theme="light"] {
+    --bg-dark: #f8f9fa;
+    --bg-card: rgba(0, 0, 0, 0.05);
+    --bg-glass: rgba(0, 0, 0, 0.05);
+}
+
+body {
+    background-color: var(--bg-dark);
+    color: var(--miff-light);
+    font-family: var(--font-main);
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+}
+
+[data-theme="light"] body {
+    color: var(--miff-dark);
+}
+
+/* Glassmorphism */
+.glass {
+    background: var(--bg-glass);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+}
+
+/* Header */
+.header {
+    padding: 1.5rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    transition: all 0.3s ease;
+}
+
+.header.scrolled {
+    background: rgba(10, 10, 10, 0.8);
+    backdrop-filter: blur(10px);
+    padding: 1rem 2rem;
+}
+
+.logo-container {
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+}
+
+.logo-container img {
+    height: 45px;
+    object-fit: contain;
+}
+
+/* Hero Section */
+.hero {
+    padding-top: 150px;
+    padding-bottom: 50px;
+    text-align: center;
+    position: relative;
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+    background: linear-gradient(to right, #fff, var(--miff-gold));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    opacity: 0.8;
+}
+
+/* Registration Cards */
+.cards-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.reg-card {
+    padding: 2.5rem;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+.reg-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: var(--miff-gold);
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+.reg-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+}
+
+.reg-card:hover::before {
+    transform: scaleX(1);
+}
+
+.reg-card h3 {
+    margin: 1.5rem 0 1rem;
+    font-size: 1.5rem;
+}
+
+.reg-card .icon {
+    font-size: 3rem;
+    color: var(--miff-gold);
+}
+
+.btn-miff {
+    background: var(--miff-gold);
+    color: var(--miff-dark);
+    padding: 0.8rem 2rem;
+    border-radius: 8px;
+    font-weight: 700;
+    text-decoration: none;
+    display: inline-block;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-miff:hover {
+    background: #fff;
+    transform: scale(1.05);
+}
+
+/* Form Styles */
+.form-container {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 3rem;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    opacity: 0.9;
+}
+
+.form-control {
+    width: 100%;
+    padding: 0.8rem 1rem;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    color: #fff;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.form-control:focus {
+    border-color: var(--miff-gold);
+}
+
+.upload-area {
+    border: 2px dashed rgba(255, 255, 255, 0.2);
+    padding: 2rem;
+    text-align: center;
+    border-radius: 12px;
+    margin: 1rem 0;
+    transition: all 0.3s ease;
+}
+
+.upload-area:hover {
+    border-color: var(--miff-gold);
+    background: rgba(212, 175, 55, 0.05);
+}
+
+/* Footer */
+footer {
+    margin-top: auto;
+    padding: 3rem;
+    text-align: center;
+    background: #050505;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-up {
+    animation: fadeInUp 0.6s ease forwards;
+}

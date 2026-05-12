@@ -1,0 +1,256 @@
+/* MIFF Global Design System */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Roboto:wght@300;400;500&display=swap');
+
+:root {
+    --miff-gold: #FCC419;
+    --miff-gold-dark: #D4A315;
+    --miff-black: #000000;
+    --miff-dark-gray: #121212;
+    --miff-gray: #222222;
+    --miff-text: #FFFFFF;
+    --miff-text-muted: #AAAAAA;
+    --miff-border: rgba(252, 196, 25, 0.3);
+    --glass-bg: rgba(18, 18, 18, 0.8);
+    --glass-border: rgba(252, 196, 25, 0.2);
+}
+
+body {
+    background-color: var(--miff-black);
+    color: var(--miff-text);
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    text-shadow: 0 2px 10px rgba(252, 196, 25, 0.3);
+}
+
+/* Background Decoration */
+.bg-gradient-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.9)), url('../assets/miff_bg.png') no-repeat center center/cover;
+    z-index: -1;
+}
+
+/* Header */
+.miff-header {
+    background: rgba(0, 0, 0, 0.9);
+    border-bottom: 1px solid var(--miff-border);
+    padding: 15px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    backdrop-filter: blur(10px);
+}
+
+.miff-logo {
+    color: var(--miff-gold);
+    font-size: 1.8rem;
+    font-weight: 800;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.miff-logo:hover {
+    color: var(--miff-gold);
+}
+
+.miff-logo span {
+    border: 2px solid var(--miff-gold);
+    padding: 2px 8px;
+    border-radius: 4px;
+}
+
+/* Form Containers */
+.miff-card {
+    background: var(--miff-dark-gray);
+    border: 1px solid var(--miff-border);
+    border-radius: 12px;
+    padding: 40px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    position: relative;
+    overflow: hidden;
+    animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0px); }
+}
+
+.miff-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: var(--miff-gold);
+}
+
+.miff-card-header {
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.miff-card-title {
+    color: var(--miff-gold);
+    text-transform: uppercase;
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+/* Buttons */
+.btn-miff-primary {
+    background-color: var(--miff-gold);
+    color: var(--miff-black);
+    border: none;
+    border-radius: 6px;
+    padding: 12px 24px;
+    font-weight: 700;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+    width: 100%;
+}
+
+.btn-miff-primary:hover {
+    background-color: var(--miff-gold-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 0 20px rgba(252, 196, 25, 0.6);
+}
+
+.btn-miff-outline {
+    background: transparent;
+    color: var(--miff-gold);
+    border: 1px solid var(--miff-gold);
+    border-radius: 6px;
+    padding: 10px 20px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.btn-miff-outline:hover {
+    background: rgba(252, 196, 25, 0.1);
+    color: var(--miff-gold);
+}
+
+/* Form Controls */
+.form-label {
+    color: var(--miff-gold);
+    font-weight: 500;
+    font-size: 0.9rem;
+    margin-bottom: 8px;
+}
+
+.form-control {
+    background-color: #1a1a1a;
+    border: 1px solid #333;
+    color: #fff;
+    padding: 12px;
+    border-radius: 6px;
+}
+
+.form-control:focus {
+    background-color: #222;
+    border-color: var(--miff-gold);
+    color: #fff;
+    box-shadow: 0 0 0 0.25rem rgba(252, 196, 25, 0.25);
+}
+
+.form-control::placeholder {
+    color: #666;
+}
+
+/* Nav Pills Customization */
+.miff-nav-pills {
+    background: #1a1a1a;
+    border-radius: 10px;
+    padding: 5px;
+    margin-bottom: 30px;
+}
+
+.miff-nav-pills .nav-link {
+    color: var(--miff-text-muted);
+    border-radius: 8px;
+    font-weight: 600;
+    padding: 10px 20px;
+    transition: all 0.3s ease;
+}
+
+.miff-nav-pills .nav-link.active {
+    background-color: var(--miff-gold);
+    color: var(--miff-black);
+}
+
+.miff-nav-pills .nav-link:not(.active):hover {
+    color: var(--miff-gold);
+}
+
+/* Footer */
+.miff-footer {
+    background: #080808;
+    border-top: 1px solid #222;
+    padding: 40px 0;
+    margin-top: 80px;
+    text-align: center;
+}
+
+.footer-text {
+    color: var(--miff-text-muted);
+    font-size: 0.9rem;
+}
+
+.footer-links a {
+    color: var(--miff-gold);
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+.footer-links a:hover {
+    text-decoration: underline;
+}
+
+/* Registration Specifics */
+.section-divider {
+    border-top: 1px solid var(--miff-border);
+    margin: 30px 0;
+    position: relative;
+}
+
+.section-divider span {
+    position: absolute;
+    top: -12px;
+    left: 20px;
+    background: var(--miff-dark-gray);
+    padding: 0 10px;
+    color: var(--miff-gold);
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.note-box {
+    background: rgba(252, 196, 25, 0.05);
+    border-left: 3px solid var(--miff-gold);
+    padding: 15px;
+    margin-bottom: 25px;
+    border-radius: 0 8px 8px 0;
+}
+
+.note-box p {
+    margin: 0;
+    font-size: 0.85rem;
+    color: #ddd;
+}
