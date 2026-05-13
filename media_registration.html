@@ -60,7 +60,7 @@
             <div class="row justify-content-center">
                 <div class="col-lg-10">
                     <div class="miff-card">
-                        <div class="miff-card-header">
+                        <div class="miff-card-header text-center">
                             <h2 class="miff-card-title">Media Registration Form</h2>
                             <p class="text-white-50">Please fill in the details below to apply for media accreditation.</p>
                         </div>
@@ -72,70 +72,122 @@
 
                         <form>
                             <div class="row g-4">
-                                <!-- Upload Fields -->
-                                <div class="col-md-6">
-                                    <label class="form-label">Photo ID Proof *</label>
-                                    <p class="small text-white-50 mb-2">(Aadhaar / License / Passport / Voter ID)</p>
-                                    <div class="input-group">
-                                        <input type="file" class="form-control">
-                                        <button class="btn btn-miff-outline" type="button">Upload</button>
+                                <!-- Personal Details Section -->
+                                <div class="col-12">
+                                    <div class="section-divider">
+                                        <span>Personal & Professional Details</span>
                                     </div>
                                 </div>
 
                                 <div class="col-md-6">
-                                    <label class="form-label">Passport Size Photograph *</label>
-                                    <p class="small text-white-50 mb-2">Recent clear photograph</p>
+                                    <label class="form-label">Name of Applicant *</label>
                                     <div class="input-group">
-                                        <input type="file" class="form-control">
-                                        <button class="btn btn-miff-outline" type="button">Upload</button>
+                                        <span class="input-group-text bg-dark border-secondary text-secondary"><i class="fas fa-user"></i></span>
+                                        <input type="text" class="form-control" placeholder="Enter your full name" required>
                                     </div>
                                 </div>
 
                                 <div class="col-md-6">
-                                    <label class="form-label">Organisational ID *</label>
-                                    <p class="small text-white-50 mb-2">Official ID card of your media house</p>
+                                    <label class="form-label">Designation Category *</label>
                                     <div class="input-group">
-                                        <input type="file" class="form-control">
-                                        <button class="btn btn-miff-outline" type="button">Upload</button>
+                                        <span class="input-group-text bg-dark border-secondary text-secondary"><i class="fas fa-id-badge"></i></span>
+                                        <select class="form-select" required>
+                                            <option value="" selected disabled>Select Category</option>
+                                            <option value="Correspondent">Correspondent</option>
+                                            <option value="Journalist with Equipment">Journalist with Equipment</option>
+                                            <option value="Photographer">Photographer</option>
+                                            <option value="Videographer">Videographer</option>
+                                            <option value="Digital Media">Digital Media</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-12">
+                                    <label class="form-label">Name of Organisation *</label>
+                                    <div class="input-group">
+                                        <span class="input-group-text bg-dark border-secondary text-secondary"><i class="fas fa-building"></i></span>
+                                        <input type="text" class="form-control" placeholder="Enter your organisation name" required>
                                     </div>
                                 </div>
 
                                 <div class="col-md-6">
-                                    <label class="form-label">Editor’s Nomination Letter *</label>
-                                    <p class="small text-white-50 mb-2">Or Self-Declaration for Freelancers</p>
+                                    <label class="form-label">Mobile Number *</label>
                                     <div class="input-group">
-                                        <input type="file" class="form-control">
-                                        <button class="btn btn-miff-outline" type="button">Upload</button>
+                                        <span class="input-group-text bg-dark border-secondary text-secondary"><i class="fas fa-phone"></i></span>
+                                        <input type="tel" class="form-control" placeholder="Enter mobile number" required>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <label class="form-label">Alternate Mobile Number</label>
+                                    <div class="input-group">
+                                        <span class="input-group-text bg-dark border-secondary text-secondary"><i class="fas fa-phone-alt"></i></span>
+                                        <input type="tel" class="form-control" placeholder="Enter alternate mobile number">
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <label class="form-label">Work E-mail Address *</label>
+                                    <div class="input-group">
+                                        <span class="input-group-text bg-dark border-secondary text-secondary"><i class="fas fa-envelope"></i></span>
+                                        <input type="email" class="form-control" placeholder="Enter work email" required>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-3">
+                                    <label class="form-label">City *</label>
+                                    <div class="input-group">
+                                        <span class="input-group-text bg-dark border-secondary text-secondary"><i class="fas fa-map-marker-alt"></i></span>
+                                        <input type="text" class="form-control" placeholder="City" required>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-3">
+                                    <label class="form-label">State *</label>
+                                    <div class="input-group">
+                                        <span class="input-group-text bg-dark border-secondary text-secondary"><i class="fas fa-map"></i></span>
+                                        <input type="text" class="form-control" placeholder="State" required>
                                     </div>
                                 </div>
 
                                 <div class="col-12">
                                     <div class="section-divider">
-                                        <span>Proof of Work</span>
+                                        <span>Attachments</span>
                                     </div>
-                                    <p class="mb-3 text-white-50">Upload a file with at least 5 samples of work (articles, photos, videos, links). Ensure byline is visible.</p>
-                                    
-                                    <div class="row align-items-end g-3 mb-3">
-                                        <div class="col-md-5">
-                                            <label class="form-label">Upload Document</label>
-                                            <input type="file" class="form-control">
-                                        </div>
-                                        <div class="col-md-5">
-                                            <label class="form-label">Or Add Links</label>
-                                            <div id="links-container">
-                                                <input type="url" class="form-control mb-1" placeholder="https://example.com/article">
-                                            </div>
-                                        </div>
-                                        <div class="col-md-2">
-                                            <button type="button" class="btn btn-miff-outline w-100" id="add-link">
-                                                <i class="fas fa-plus me-1"></i> Add
-                                            </button>
-                                        </div>
-                                    </div>
-                                    
-                                    <div class="note-box py-2">
-                                        <p class="small">Note: If a byline is not visible, a certification letter from the Editor must be uploaded. <a href="#" class="text-gold" style="color: var(--miff-gold);">View Annexure A</a></p>
-                                    </div>
+                                    <p class="small text-danger fw-bold mb-3">Note: All files must be less than 1 MB (JPEG/PDF format).</p>
+                                </div>
+
+                                <!-- Upload Fields -->
+                                <div class="col-md-6">
+                                    <label class="form-label">Recent Passport Photo *</label>
+                                    <input type="file" class="form-control" required>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <label class="form-label">Govt ID *</label>
+                                    <p class="small text-white-50 mb-2">(Aadhaar / License / Passport / Voter ID)</p>
+                                    <input type="file" class="form-control" required>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <label class="form-label">Organisation ID Card *</label>
+                                    <input type="file" class="form-control" required>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <label class="form-label">Editor's Letter of Recommendation *</label>
+                                    <input type="file" class="form-control" required>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <label class="form-label">Self Declaration *</label>
+                                    <input type="file" class="form-control" required>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <label class="form-label">Proof of Previous Works *</label>
+                                    <p class="small text-white-50 mb-2">(Combined PDF of articles/links/photos)</p>
+                                    <input type="file" class="form-control" required>
                                 </div>
 
                                 <!-- Declaration -->
@@ -153,6 +205,12 @@
                                     <button type="submit" class="btn btn-miff-primary" style="max-width: 300px;">
                                         Submit Accreditation Application
                                     </button>
+                                </div>
+
+                                <!-- Extra Links -->
+                                <div class="col-12 text-center mt-4 pt-3 border-top border-secondary">
+                                    <p class="small text-white-50 mb-1">To read the media accreditation policy, <a href="#" class="text-gold" style="color: var(--miff-gold);">click here</a></p>
+                                    <p class="small text-white-50">For any queries, please email us at: <a href="mailto:helpdesk@miff.in" class="text-gold" style="color: var(--miff-gold);">helpdesk@miff.in</a></p>
                                 </div>
                             </div>
                         </form>
