@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,7 +11,59 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
     <!-- Custom MIFF Style -->
     <link rel="stylesheet" href="css/miff_style.css">
+    <!-- Choices.js CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/choices.js/public/assets/styles/choices.min.css" />
+    <style>
+        /* Choices.js Custom Styling to match MIFF Theme */
+        .choices {
+            margin-bottom: 0;
+            width: 120px;
+        }
+
+        .choices__inner {
+            background-color: #1a1a1a !important;
+            border: 1px solid #333 !important;
+            border-radius: 8px !important;
+            min-height: 48px !important;
+            padding: 8px 12px !important;
+            color: var(--miff-gold) !important;
+        }
+
+        .choices.is-focused .choices__inner {
+            border-color: var(--miff-gold) !important;
+            box-shadow: 0 0 0 0.25rem rgba(252, 196, 25, 0.25) !important;
+        }
+
+        .choices__list--dropdown {
+            background-color: #1a1a1a !important;
+            border: 1px solid var(--miff-gold) !important;
+            z-index: 1000 !important;
+        }
+
+        .choices__list--dropdown .choices__item--selectable.is-highlighted,
+        .choices__list--dropdown .choices__item.is-selected {
+            background-color: var(--miff-gold) !important;
+            color: var(--miff-black) !important;
+            font-weight: 700 !important;
+        }
+
+        .choices__item {
+            font-size: 0.9rem !important;
+        }
+
+        .choices__input {
+            background-color: #222 !important;
+            color: #fff !important;
+            border-bottom: 1px solid #444 !important;
+        }
+
+        .choices__placeholder {
+            opacity: 1;
+            color: #666 !important;
+        }
+    </style>
 </head>
+
 <body>
     <div class="bg-gradient-overlay"></div>
 
@@ -62,7 +115,8 @@
                     <div class="miff-card">
                         <div class="miff-card-header text-center">
                             <h2 class="miff-card-title">Media Registration Form</h2>
-                            <p class="text-white-50">Please fill in the details below to apply for media accreditation.</p>
+                            <p class="text-white-50">Please fill in the details below to apply for media accreditation.
+                            </p>
                         </div>
 
                         <div class="note-box mb-4">
@@ -82,7 +136,8 @@
                                 <div class="col-md-6">
                                     <label class="form-label">Name of Applicant *</label>
                                     <div class="input-group">
-                                        <span class="input-group-text bg-dark border-secondary text-secondary"><i class="fas fa-user"></i></span>
+                                        <span class="input-group-text bg-dark border-secondary text-secondary"><i
+                                                class="fas fa-user"></i></span>
                                         <input type="text" class="form-control" placeholder="Enter full name" required>
                                     </div>
                                 </div>
@@ -90,23 +145,28 @@
                                 <div class="col-md-6">
                                     <label class="form-label">Name of Organisation *</label>
                                     <div class="input-group">
-                                        <span class="input-group-text bg-dark border-secondary text-secondary"><i class="fas fa-building"></i></span>
-                                        <input type="text" class="form-control" placeholder="Enter organisation name" required>
+                                        <span class="input-group-text bg-dark border-secondary text-secondary"><i
+                                                class="fas fa-building"></i></span>
+                                        <input type="text" class="form-control" placeholder="Enter organisation name"
+                                            required>
                                     </div>
                                 </div>
 
                                 <div class="col-md-6">
                                     <label class="form-label">Designation *</label>
                                     <div class="input-group">
-                                        <span class="input-group-text bg-dark border-secondary text-secondary"><i class="fas fa-briefcase"></i></span>
-                                        <input type="text" class="form-control" placeholder="Enter designation" required>
+                                        <span class="input-group-text bg-dark border-secondary text-secondary"><i
+                                                class="fas fa-briefcase"></i></span>
+                                        <input type="text" class="form-control" placeholder="Enter designation"
+                                            required>
                                     </div>
                                 </div>
 
                                 <div class="col-md-6">
                                     <label class="form-label">Category *</label>
                                     <div class="input-group">
-                                        <span class="input-group-text bg-dark border-secondary text-secondary"><i class="fas fa-id-badge"></i></span>
+                                        <span class="input-group-text bg-dark border-secondary text-secondary"><i
+                                                class="fas fa-id-badge"></i></span>
                                         <select class="form-select" required>
                                             <option value="" selected disabled>Select Category</option>
                                             <option value="Correspondent">Correspondent</option>
@@ -121,31 +181,40 @@
                                 <div class="col-md-6">
                                     <label class="form-label">Mobile Number / WhatsApp No *</label>
                                     <div class="input-group">
-                                        <input type="text" class="form-control text-center px-0" style="max-width: 80px;" placeholder="+91" required>
-                                        <input type="tel" class="form-control" placeholder="Enter mobile number" required>
+                                        <select class="form-select country-code-select" required>
+                                            <option value="+91" selected>IND +91</option>
+                                        </select>
+                                        <input type="tel" class="form-control" placeholder="Enter mobile number"
+                                            required>
                                     </div>
                                 </div>
 
                                 <div class="col-md-6">
                                     <label class="form-label">Alternative Mobile Number</label>
                                     <div class="input-group">
-                                        <input type="text" class="form-control text-center px-0" style="max-width: 80px;" placeholder="+91">
-                                        <input type="tel" class="form-control" placeholder="Enter alternative mobile number">
+                                        <select class="form-select country-code-select">
+                                            <option value="+91" selected>IND +91</option>
+                                        </select>
+                                        <input type="tel" class="form-control"
+                                            placeholder="Enter alternative mobile number">
                                     </div>
                                 </div>
 
                                 <div class="col-md-12">
                                     <label class="form-label">Email ID *</label>
                                     <div class="input-group">
-                                        <span class="input-group-text bg-dark border-secondary text-secondary"><i class="fas fa-envelope"></i></span>
-                                        <input type="email" class="form-control" placeholder="Enter email address" required>
+                                        <span class="input-group-text bg-dark border-secondary text-secondary"><i
+                                                class="fas fa-envelope"></i></span>
+                                        <input type="email" class="form-control" placeholder="Enter email address"
+                                            required>
                                     </div>
                                 </div>
 
                                 <div class="col-md-4">
                                     <label class="form-label">Country *</label>
                                     <div class="input-group">
-                                        <span class="input-group-text bg-dark border-secondary text-secondary"><i class="fas fa-globe"></i></span>
+                                        <span class="input-group-text bg-dark border-secondary text-secondary"><i
+                                                class="fas fa-globe"></i></span>
                                         <input type="text" class="form-control" placeholder="Country" required>
                                     </div>
                                 </div>
@@ -153,7 +222,8 @@
                                 <div class="col-md-4">
                                     <label class="form-label">State *</label>
                                     <div class="input-group">
-                                        <span class="input-group-text bg-dark border-secondary text-secondary"><i class="fas fa-map"></i></span>
+                                        <span class="input-group-text bg-dark border-secondary text-secondary"><i
+                                                class="fas fa-map"></i></span>
                                         <input type="text" class="form-control" placeholder="State" required>
                                     </div>
                                 </div>
@@ -161,7 +231,8 @@
                                 <div class="col-md-4">
                                     <label class="form-label">City *</label>
                                     <div class="input-group">
-                                        <span class="input-group-text bg-dark border-secondary text-secondary"><i class="fas fa-map-marker-alt"></i></span>
+                                        <span class="input-group-text bg-dark border-secondary text-secondary"><i
+                                                class="fas fa-map-marker-alt"></i></span>
                                         <input type="text" class="form-control" placeholder="City" required>
                                     </div>
                                 </div>
@@ -170,7 +241,8 @@
                                     <div class="section-divider">
                                         <span>Attachments</span>
                                     </div>
-                                    <p class="small text-danger fw-bold mb-3">Note: All files must be less than 1 MB (JPEG/PDF format).</p>
+                                    <p class="small text-danger fw-bold mb-3">Note: All files must be less than 1 MB
+                                        (JPEG/PDF format).</p>
                                 </div>
 
                                 <!-- Upload Fields -->
@@ -180,7 +252,9 @@
                                 </div>
 
                                 <div class="col-md-6">
-                                    <label class="form-label">Govt ID * <span class="small text-white-50 fw-normal ms-1" style="font-size: 0.75rem;">(Aadhaar/License/Passport/Voter ID)</span></label>
+                                    <label class="form-label">Govt ID * <span class="small text-white-50 fw-normal ms-1"
+                                            style="font-size: 0.75rem;">(Aadhaar/License/Passport/Voter
+                                            ID)</span></label>
                                     <input type="file" class="form-control" required>
                                 </div>
 
@@ -195,7 +269,9 @@
                                 </div>
 
                                 <div class="col-md-12">
-                                    <label class="form-label">Proof of Previous Works * <span class="small text-white-50 fw-normal ms-1" style="font-size: 0.75rem;">(Combined PDF of samples)</span></label>
+                                    <label class="form-label">Proof of Previous Works * <span
+                                            class="small text-white-50 fw-normal ms-1"
+                                            style="font-size: 0.75rem;">(Combined PDF of samples)</span></label>
                                     <input type="file" class="form-control" required>
                                 </div>
 
@@ -204,13 +280,15 @@
                                     <div class="form-check custom-checkbox mb-2">
                                         <input class="form-check-input" type="checkbox" id="policy_agreement" required>
                                         <label class="form-check-label text-white-50" for="policy_agreement">
-                                            I have read the <a href="#" class="text-gold" style="color: var(--miff-gold);">media accreditation policy</a>
+                                            I have read the <a href="#" class="text-gold"
+                                                style="color: var(--miff-gold);">media accreditation policy</a>
                                         </label>
                                     </div>
                                     <div class="form-check custom-checkbox">
                                         <input class="form-check-input" type="checkbox" id="declaration" required>
                                         <label class="form-check-label text-white-50" for="declaration">
-                                            I certify that the above information and documents are true to the best of my knowledge. False or undefined claims may lead to disqualification.
+                                            I certify that the above information and documents are true to the best of
+                                            my knowledge. False or undefined claims may lead to disqualification.
                                         </label>
                                     </div>
                                 </div>
@@ -224,8 +302,12 @@
 
                                 <!-- Extra Links -->
                                 <div class="col-12 text-center mt-4 pt-3 border-top border-secondary">
-                                    <p class="small text-white-50 mb-1">To read the media accreditation policy, <a href="#" class="text-gold" style="color: var(--miff-gold);">click here</a></p>
-                                    <p class="small text-white-50">For any queries, please email us at: <a href="mailto:helpdesk@miff.in" class="text-gold" style="color: var(--miff-gold);">helpdesk@miff.in</a></p>
+                                    <p class="small text-white-50 mb-1">To read the media accreditation policy, <a
+                                            href="#" class="text-gold" style="color: var(--miff-gold);">click here</a>
+                                    </p>
+                                    <p class="small text-white-50">For any queries, please email us at: <a
+                                            href="mailto:helpdesk@miff.in" class="text-gold"
+                                            style="color: var(--miff-gold);">helpdesk@miff.in</a></p>
                                 </div>
                             </div>
                         </form>
@@ -239,22 +321,74 @@
     <footer class="miff-footer">
         <div class="container">
             <p class="footer-text mb-2">&copy; 2026 Mumbai International Film Festival. All Rights Reserved.</p>
-            <p class="small text-white-50">Organized by National Film Development Corporation (NFDC), Ministry of Information & Broadcasting, Government of India.</p>
+            <p class="small text-white-50">Organized by National Film Development Corporation (NFDC), Ministry of
+                Information & Broadcasting, Government of India.</p>
         </div>
     </footer>
 
     <!-- Bootstrap 5 Bundle -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Choices.js JS -->
+    <script src="https://cdn.jsdelivr.net/npm/choices.js/public/assets/scripts/choices.min.js"></script>
     <script>
-        // Dynamic link addition
-        document.getElementById('add-link').addEventListener('click', function() {
+        // Country Codes Data
+        const countryCodes = [
+            { value: '+91', label: 'IND +91' },
+            { value: '+1', label: 'USA +1' },
+            { value: '+44', label: 'GBR +44' },
+            { value: '+971', label: 'ARE +971' },
+            { value: '+61', label: 'AUS +61' },
+            { value: '+1', label: 'CAN +1' },
+            { value: '+49', label: 'DEU +49' },
+            { value: '+33', label: 'FRA +33' },
+            { value: '+81', label: 'JPN +81' },
+            { value: '+65', label: 'SGP +65' },
+            { value: '+7', label: 'RUS +7' },
+            { value: '+86', label: 'CHN +86' },
+            { value: '+39', label: 'ITA +39' },
+            { value: '+34', label: 'ESP +34' },
+            { value: '+55', label: 'BRA +55' },
+            { value: '+27', label: 'ZAF +27' },
+            { value: '+82', label: 'KOR +82' },
+            { value: '+92', label: 'PAK +92' },
+            { value: '+880', label: 'BGD +880' },
+            { value: '+94', label: 'LKA +94' }
+        ];
+
+        // Initialize Choices.js
+        const countrySelects = document.querySelectorAll('.country-code-select');
+        countrySelects.forEach(select => {
+            // Add other options
+            countryCodes.forEach(country => {
+                if (country.value !== '+91') {
+                    const option = document.createElement('option');
+                    option.value = country.value;
+                    option.textContent = country.label;
+                    select.appendChild(option);
+                }
+            });
+
+            new Choices(select, {
+                searchEnabled: true,
+                itemSelectText: '',
+                shouldSort: false,
+                placeholder: true,
+                placeholderValue: 'Select Code'
+            });
+        });
+
+        // Dynamic link addition (existing script)
+        document.getElementById('add-link')?.addEventListener('click', function () {
             const container = document.getElementById('links-container');
-            const input = document.createElement('input');
-            input.type = 'url';
-            input.className = 'form-control mb-1';
-            input.placeholder = 'https://example.com/another-article';
-            container.appendChild(input);
+            if (container) {
+                const input = document.createElement('input');
+                input.type = 'url';
+                input.className = 'form-control mb-1';
+                input.placeholder = 'https://example.com/another-article';
+                container.appendChild(input);
+            }
         });
     </script>
 </body>
+
 </html>
