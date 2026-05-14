@@ -23,7 +23,12 @@ body {
     overflow-x: hidden;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     font-family: 'Montserrat', sans-serif;
     font-weight: 700;
     letter-spacing: 0.5px;
@@ -44,7 +49,7 @@ h1, h2, h3, h4, h5, h6 {
 /* Premium Site Header (Pill Style) */
 .site-header {
     position: fixed;
-    top: 25px; 
+    top: 25px;
     left: 0;
     width: 100%;
     z-index: 1045;
@@ -102,7 +107,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .logo-img.invert-logo {
-    filter: brightness(0) invert(1); /* Make dark logos white */
+    filter: brightness(0) invert(1);
+    /* Make dark logos white */
 }
 
 .logo-img:not(.invert-logo) {
@@ -116,6 +122,10 @@ h1, h2, h3, h4, h5, h6 {
 
 .logo-img.invert-logo:hover {
     filter: brightness(0) invert(1) drop-shadow(0 0 12px rgba(252, 196, 25, 0.6));
+}
+
+.miff-text-logo .logo-img {
+    height: 75px;
 }
 
 .miff-text-logo {
@@ -169,6 +179,7 @@ section {
     .nav-container {
         gap: 20px;
     }
+
     .logo-img {
         height: 40px;
     }
@@ -178,16 +189,20 @@ section {
     .site-header {
         top: 15px;
     }
+
     .nav-container {
         padding: 8px 20px;
         gap: 15px;
         border-radius: 40px;
     }
+
     .logo-img {
         height: 35px;
     }
+
     .logo-item:nth-child(n+4):not(:last-child) {
-        display: none; /* Hide middle logos on tablet */
+        display: none;
+        /* Hide middle logos on tablet */
     }
 }
 
@@ -196,13 +211,16 @@ section {
         padding: 8px 15px;
         gap: 10px;
     }
+
     .logo-img {
         height: 30px;
     }
+
     .menu-btn {
         padding: 8px 16px;
         font-size: 13px;
     }
+
     .miff-text-logo {
         font-size: 1.2rem;
     }
@@ -221,9 +239,17 @@ section {
 }
 
 @keyframes float {
-    0% { transform: translateY(0px); }
-    50% { transform: translateY(-10px); }
-    100% { transform: translateY(0px); }
+    0% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
 }
 
 .miff-card::before {
@@ -433,7 +459,7 @@ section {
         gap: 6px;
         padding: 8px;
     }
-    
+
     .miff-nav-pills .nav-link {
         padding: 12px 20px;
         justify-content: center;
