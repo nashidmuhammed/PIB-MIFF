@@ -61,6 +61,53 @@
             opacity: 1;
             color: #666 !important;
         }
+
+        .info-icon {
+            color: var(--miff-gold);
+            cursor: help;
+            font-size: 0.85rem;
+            opacity: 0.7;
+            transition: opacity 0.2s;
+            vertical-align: middle;
+        }
+
+        .info-icon:hover {
+            opacity: 1;
+        }
+
+        /* Custom Tooltip Styling */
+        .tooltip-inner {
+            background-color: #1a1a1a !important;
+            border: 1px solid var(--miff-gold) !important;
+            color: #fff !important;
+            text-align: left !important;
+            padding: 12px !important;
+            max-width: 280px !important;
+            font-size: 0.85rem !important;
+            line-height: 1.5 !important;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.5) !important;
+        }
+
+        .tooltip .tooltip-arrow::before {
+            border-top-color: var(--miff-gold) !important;
+        }
+
+        .text-truncate-hint {
+            display: inline-block;
+            max-width: 350px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            vertical-align: middle;
+            pointer-events: auto;
+            cursor: help;
+        }
+
+        @media (max-width: 768px) {
+            .text-truncate-hint {
+                max-width: 200px;
+            }
+        }
     </style>
 </head>
 
@@ -109,9 +156,7 @@
                 <div class="col-lg-10">
                     <div class="miff-card">
                         <div class="miff-card-header text-center">
-                            <h2 class="miff-card-title">Media Registration Form</h2>
-                            <p class="text-white-50">Please fill in the details below to apply for media accreditation.
-                            </p>
+                            <h2 class="miff-card-title">Media Registration Form for 19th Mumbai International Film Festival 2026</h2>
                         </div>
 
                         <div class="note-box mb-4">
@@ -131,8 +176,12 @@
                                 <div class="col-md-6">
                                     <label class="form-label">Name of Applicant *</label>
                                     <div class="input-group">
-                                        <span class="input-group-text bg-dark border-secondary text-secondary"><i
-                                                class="fas fa-user"></i></span>
+                                        <select class="form-select" style="max-width: 100px;" required>
+                                            <option value="" selected disabled>Title</option>
+                                            <option value="Mr">Mr</option>
+                                            <option value="Ms">Ms</option>
+                                            <option value="Mrs">Mrs</option>
+                                        </select>
                                         <input type="text" class="form-control" placeholder="Enter full name" required>
                                     </div>
                                 </div>
@@ -164,17 +213,15 @@
                                                 class="fas fa-id-badge"></i></span>
                                         <select class="form-select" required>
                                             <option value="" selected disabled>Select Category</option>
-                                            <option value="Correspondent">Correspondent</option>
-                                            <option value="Journalist with Equipment">Journalist with Equipment</option>
-                                            <option value="Photographer">Photographer</option>
-                                            <option value="Videographer">Videographer</option>
-                                            <option value="Content Creator">Content Creator</option>
+                                            <option value="Correspondent (without equipment)">Correspondent (without equipment)</option>
+                                            <option value="Correspondent (with equipment)">Correspondent (with equipment)</option>
+                                            <option value="Photographer / Videographer">Photographer / Videographer</option>
                                         </select>
                                     </div>
                                 </div>
 
                                 <div class="col-md-6">
-                                    <label class="form-label">Mobile Number / WhatsApp No *</label>
+                                    <label class="form-label">Mobile Number/WhatsApp Number *</label>
                                     <div class="input-group">
                                         <select class="form-select country-code-select" required>
                                             <option value="+91" selected>IND +91</option>
@@ -232,41 +279,80 @@
                                     </div>
                                 </div>
 
+                                <div class="col-md-8">
+                                    <label class="form-label">Detailed Address *</label>
+                                    <div class="input-group">
+                                        <span class="input-group-text bg-dark border-secondary text-secondary"><i
+                                                class="fas fa-home"></i></span>
+                                        <input type="text" class="form-control" placeholder="Enter your detailed address" required>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-4">
+                                    <label class="form-label">Pin Code *</label>
+                                    <div class="input-group">
+                                        <span class="input-group-text bg-dark border-secondary text-secondary"><i
+                                                class="fas fa-mail-bulk"></i></span>
+                                        <input type="text" class="form-control" placeholder="Pin code" required>
+                                    </div>
+                                </div>
+
                                 <div class="col-12">
                                     <div class="section-divider">
                                         <span>Attachments</span>
                                     </div>
-                                    <p class="small text-danger fw-bold mb-3">Note: All files must be less than 1 MB
-                                        (JPEG/PDF format).</p>
+                                    <p class="small text-danger fw- mb-3">⚠️  Please avoid using spaces, special characters, or unsupported extensions in file names. Non-compliant uploads may be blocked by NIC firewall restrictions.</p>
                                 </div>
 
                                 <!-- Upload Fields -->
                                 <div class="col-md-6">
-                                    <label class="form-label">Recent Passport Photo *</label>
+                                    <label class="form-label">
+                                        Recent Passport Photo *
+                                        <i class="fas fa-info-circle ms-1 info-icon" data-bs-toggle="tooltip" data-bs-html="true" 
+                                           title="Format: .pdf, .jpg, or .jpeg<br>File name: alpha-numeric only (e.g., photo123.jpg)<br>Max size: 1MB"></i>
+                                    </label>
                                     <input type="file" class="form-control" required>
                                 </div>
 
                                 <div class="col-md-6">
-                                    <label class="form-label">Govt ID * <span class="small text-white-50 fw-normal ms-1"
-                                            style="font-size: 0.75rem;">(Aadhaar/License/Passport/Voter
-                                            ID)</span></label>
+                                    <label class="form-label d-flex align-items-center flex-wrap">
+                                        <span class="me-1">Govt ID *</span>
+                                        <i class="fas fa-info-circle me-2 info-icon" data-bs-toggle="tooltip" data-bs-html="true" 
+                                           title="Format: .pdf, .jpg, or .jpeg<br>File name: alpha-numeric only (e.g., govid456.pdf)<br>Max size: 1MB"></i>
+                                        <span class="small text-white-50 fw-normal text-truncate-hint" style="font-size: 0.75rem;" 
+                                              data-bs-toggle="tooltip" 
+                                              title="(Aadhaar/License/Passport/Voter ID/ [Upload J visa here, if non-Indian journalist])">
+                                              (Aadhaar/License/Passport/Voter ID/ [Upload J visa here, if non-Indian journalist])
+                                        </span>
+                                    </label>
                                     <input type="file" class="form-control" required>
                                 </div>
 
                                 <div class="col-md-6">
-                                    <label class="form-label">Organisation ID Card *</label>
+                                    <label class="form-label">
+                                        Organisation ID Card *
+                                        <i class="fas fa-info-circle ms-1 info-icon" data-bs-toggle="tooltip" data-bs-html="true" 
+                                           title="Format: .pdf, .jpg, or .jpeg<br>File name: alpha-numeric only (e.g., orgid789.jpg)<br>Max size: 1MB"></i>
+                                    </label>
                                     <input type="file" class="form-control" required>
                                 </div>
 
                                 <div class="col-md-6">
-                                    <label class="form-label">Editor's Letter / Self Declaration *</label>
+                                    <label class="form-label">
+                                        Editor's Letter / Self Declaration *
+                                        <i class="fas fa-info-circle ms-1 info-icon" data-bs-toggle="tooltip" data-bs-html="true" 
+                                           title="Format: .pdf, .jpg, or .jpeg<br>File name: alpha-numeric only (e.g., nomination2025.pdf)<br>Max size: 1MB"></i>
+                                    </label>
                                     <input type="file" class="form-control" required>
                                 </div>
 
                                 <div class="col-md-12">
-                                    <label class="form-label">Proof of Previous Works * <span
-                                            class="small text-white-50 fw-normal ms-1"
-                                            style="font-size: 0.75rem;">(Combined PDF of samples)</span></label>
+                                    <label class="form-label">
+                                        Proof of Previous Works *
+                                        <i class="fas fa-info-circle ms-1 info-icon" data-bs-toggle="tooltip" data-bs-html="true" 
+                                           title="Up to 5 published articles related to film coverage<br>Format: .pdf, .jpg, or .jpeg<br>File name: alpha-numeric only (e.g., work1.pdf)<br>Max size: 1MB per document<br>(Links to videos can be compiled in a pdf)"></i>
+                                        <span class="small text-white-50 fw-normal ms-1" style="font-size: 0.75rem;">(Combined PDF of samples)</span>
+                                    </label>
                                     <input type="file" class="form-control" required>
                                 </div>
 
@@ -274,16 +360,15 @@
                                 <div class="col-12 mt-4">
                                     <div class="form-check custom-checkbox mb-2">
                                         <input class="form-check-input" type="checkbox" id="policy_agreement" required>
-                                        <label class="form-check-label text-white-50" for="policy_agreement">
+                                        <label class="form-check-label text-white-50 text-capitalize" for="policy_agreement">
                                             I have read the <a href="#" class="text-gold"
                                                 style="color: var(--miff-gold);">media accreditation policy</a>
                                         </label>
                                     </div>
                                     <div class="form-check custom-checkbox">
                                         <input class="form-check-input" type="checkbox" id="declaration" required>
-                                        <label class="form-check-label text-white-50" for="declaration">
-                                            I certify that the above information and documents are true to the best of
-                                            my knowledge. False or undefined claims may lead to disqualification.
+                                        <label class="form-check-label text-white-50 text-capitalize" for="declaration">
+                                            I certify that the information and documents provided above are true to the best of my knowledge. I am also aware that if any information provided by me is found to be false or misleading, it shall lead to disqualification.
                                         </label>
                                     </div>
                                 </div>
@@ -330,26 +415,60 @@
     <script>
         // Country Codes Data
         const countryCodes = [
-            { value: '+91', label: 'IND +91' },
-            { value: '+1', label: 'USA +1' },
-            { value: '+44', label: 'GBR +44' },
-            { value: '+971', label: 'ARE +971' },
-            { value: '+61', label: 'AUS +61' },
-            { value: '+1', label: 'CAN +1' },
-            { value: '+49', label: 'DEU +49' },
-            { value: '+33', label: 'FRA +33' },
-            { value: '+81', label: 'JPN +81' },
-            { value: '+65', label: 'SGP +65' },
-            { value: '+7', label: 'RUS +7' },
-            { value: '+86', label: 'CHN +86' },
-            { value: '+39', label: 'ITA +39' },
-            { value: '+34', label: 'ESP +34' },
-            { value: '+55', label: 'BRA +55' },
-            { value: '+27', label: 'ZAF +27' },
-            { value: '+82', label: 'KOR +82' },
-            { value: '+92', label: 'PAK +92' },
-            { value: '+880', label: 'BGD +880' },
-            { value: '+94', label: 'LKA +94' }
+            { value: '+91', label: 'India (+91)' },
+            { value: '+1', label: 'USA/Canada (+1)' },
+            { value: '+44', label: 'UK (+44)' },
+            { value: '+61', label: 'Australia (+61)' },
+            { value: '+86', label: 'China (+86)' },
+            { value: '+33', label: 'France (+33)' },
+            { value: '+49', label: 'Germany (+49)' },
+            { value: '+81', label: 'Japan (+81)' },
+            { value: '+7', label: 'Russia (+7)' },
+            { value: '+971', label: 'UAE (+971)' },
+            { value: '+65', label: 'Singapore (+65)' },
+            { value: '+82', label: 'South Korea (+82)' },
+            { value: '+39', label: 'Italy (+39)' },
+            { value: '+34', label: 'Spain (+34)' },
+            { value: '+55', label: 'Brazil (+55)' },
+            { value: '+27', label: 'South Africa (+27)' },
+            { value: '+92', label: 'Pakistan (+92)' },
+            { value: '+880', label: 'Bangladesh (+880)' },
+            { value: '+94', label: 'Sri Lanka (+94)' },
+            { value: '+977', label: 'Nepal (+977)' },
+            { value: '+60', label: 'Malaysia (+60)' },
+            { value: '+66', label: 'Thailand (+66)' },
+            { value: '+62', label: 'Indonesia (+62)' },
+            { value: '+84', label: 'Vietnam (+84)' },
+            { value: '+31', label: 'Netherlands (+31)' },
+            { value: '+41', label: 'Switzerland (+41)' },
+            { value: '+46', label: 'Sweden (+46)' },
+            { value: '+47', label: 'Norway (+47)' },
+            { value: '+45', label: 'Denmark (+45)' },
+            { value: '+353', label: 'Ireland (+353)' },
+            { value: '+64', label: 'New Zealand (+64)' },
+            { value: '+90', label: 'Turkey (+90)' },
+            { value: '+20', label: 'Egypt (+20)' },
+            { value: '+234', label: 'Nigeria (+234)' },
+            { value: '+254', label: 'Kenya (+254)' },
+            { value: '+212', label: 'Morocco (+212)' },
+            { value: '+966', label: 'Saudi Arabia (+966)' },
+            { value: '+974', label: 'Qatar (+974)' },
+            { value: '+965', label: 'Kuwait (+965)' },
+            { value: '+968', label: 'Oman (+968)' },
+            { value: '+973', label: 'Bahrain (+973)' },
+            { value: '+972', label: 'Israel (+972)' },
+            { value: '+351', label: 'Portugal (+351)' },
+            { value: '+30', label: 'Greece (+3 Greece)' },
+            { value: '+48', label: 'Poland (+48)' },
+            { value: '+420', label: 'Czech Republic (+420)' },
+            { value: '+43', label: 'Austria (+43)' },
+            { value: '+32', label: 'Belgium (+32)' },
+            { value: '+52', label: 'Mexico (+52)' },
+            { value: '+54', label: 'Argentina (+54)' },
+            { value: '+56', label: 'Chile (+56)' },
+            { value: '+57', label: 'Colombia (+57)' },
+            { value: '+51', label: 'Peru (+51)' },
+            { value: '+63', label: 'Philippines (+63)' }
         ];
 
         // Initialize Choices.js
@@ -371,6 +490,17 @@
                 shouldSort: false,
                 placeholder: true,
                 placeholderValue: 'Select Code'
+            });
+        });
+
+        // Initialize Bootstrap Tooltips with custom configuration
+        document.addEventListener('DOMContentLoaded', function() {
+            var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+            var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+                return new bootstrap.Tooltip(tooltipTriggerEl, {
+                    trigger: 'hover',
+                    container: 'body'
+                });
             });
         });
 
