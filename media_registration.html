@@ -108,6 +108,15 @@
                 max-width: 200px;
             }
         }
+
+        .file-warning-box {
+            background: rgba(220, 53, 69, 0.05);
+            border-left: 3px solid #dc3545;
+            padding: 12px 16px;
+            border-radius: 4px;
+            color: #ff99a0;
+            line-height: 1.6;
+        }
     </style>
 </head>
 
@@ -301,7 +310,12 @@
                                     <div class="section-divider">
                                         <span>Attachments</span>
                                     </div>
-                                    <p class="small text-danger fw- mb-3">⚠️  Please avoid using spaces, special characters, or unsupported extensions in file names. Non-compliant uploads may be blocked by NIC firewall restrictions.</p>
+                                    <div class="file-warning-box mb-4">
+                                        <div class="d-flex align-items-start">
+                                            <span class="me-2 mt-1">⚠️</span>
+                                            <p class="mb-0 small fw-bold">Please avoid using spaces, special characters, or unsupported extensions in file names. Non-compliant uploads may be blocked by NIC firewall restrictions.</p>
+                                        </div>
+                                    </div>
                                 </div>
 
                                 <!-- Upload Fields -->
