@@ -110,14 +110,7 @@
             }
         }
 
-        .file-warning-box {
-            background: rgba(220, 53, 69, 0.05);
-            border-left: 3px solid #dc3545;
-            padding: 12px 16px;
-            border-radius: 4px;
-            color: #ff99a0;
-            line-height: 1.6;
-        }
+
     </style>
 </head>
 
@@ -170,7 +163,7 @@
                         </div>
 
                         <div class="note-box mb-4">
-                            <p class="text-danger fw-bold">Documents to be uploaded (JPEG/PDF)</p>
+                            <p class="text-danger fw-bold">Kindly upload all attachments in .jpeg/.pdf format wherever applicable</p>
                             <p class="small text-white-50">Size must be between 5KB and 3MB.</p>
                         </div>
 
@@ -275,7 +268,7 @@
                                     <label class="form-label">State *</label>
                                     <div class="input-group">
                                         <span class="input-group-text bg-dark border-secondary text-secondary"><i
-                                                class="fas fa-map"></i></span>
+                                                class="fas fa-map-marked-alt"></i></span>
                                         <input type="text" class="form-control" placeholder="State" required>
                                     </div>
                                 </div>
@@ -290,11 +283,11 @@
                                 </div>
 
                                 <div class="col-md-8">
-                                    <label class="form-label">Detailed Address *</label>
+                                    <label class="form-label">Address *</label>
                                     <div class="input-group">
                                         <span class="input-group-text bg-dark border-secondary text-secondary"><i
                                                 class="fas fa-home"></i></span>
-                                        <input type="text" class="form-control" placeholder="Enter your detailed address" required>
+                                        <input type="text" class="form-control" placeholder="Enter your address" required>
                                     </div>
                                 </div>
 
@@ -302,7 +295,7 @@
                                     <label class="form-label">Pin Code *</label>
                                     <div class="input-group">
                                         <span class="input-group-text bg-dark border-secondary text-secondary"><i
-                                                class="fas fa-mail-bulk"></i></span>
+                                                class="fas fa-map-pin"></i></span>
                                         <input type="text" class="form-control" placeholder="Pin code" required>
                                     </div>
                                 </div>
@@ -311,11 +304,9 @@
                                     <div class="section-divider">
                                         <span>Attachments</span>
                                     </div>
-                                    <div class="file-warning-box mb-4">
-                                        <div class="d-flex align-items-start">
-                                            <span class="me-2 mt-1">⚠️</span>
-                                            <p class="mb-0 small fw-bold">Please avoid using spaces, special characters, or unsupported extensions in file names. Non-compliant uploads may be blocked by NIC firewall restrictions.</p>
-                                        </div>
+                                    <div class="note-box mb-4">
+                                        <p class="text-danger fw-bold">⚠️ Important Notice</p>
+                                        <p class="mb-0 small text-white-50">Please avoid using spaces, special characters, or unsupported extensions in file names. Non-compliant uploads may be blocked by NIC firewall restrictions.</p>
                                     </div>
                                 </div>
 
@@ -324,7 +315,7 @@
                                     <label class="form-label">
                                         Recent Passport Photo *
                                         <i class="fas fa-info-circle ms-1 info-icon" data-bs-toggle="tooltip" data-bs-html="true" 
-                                           title="Format: .pdf, .jpg, or .jpeg<br>File name: alpha-numeric only (e.g., photo123.jpg)<br>Max size: 1MB"></i>
+                                           title="Format: .pdf, .jpg, or .jpeg<br>File name: alpha-numeric only (e.g., photo123.jpg)<br>Size must be between 5KB and 3MB"></i>
                                     </label>
                                     <input type="file" class="form-control" required>
                                 </div>
@@ -333,7 +324,7 @@
                                     <label class="form-label d-flex align-items-center flex-wrap">
                                         <span class="me-1">Govt ID *</span>
                                         <i class="fas fa-info-circle me-2 info-icon" data-bs-toggle="tooltip" data-bs-html="true" 
-                                           title="Format: .pdf, .jpg, or .jpeg<br>File name: alpha-numeric only (e.g., govid456.pdf)<br>Max size: 1MB"></i>
+                                           title="Format: .pdf, .jpg, or .jpeg<br>File name: alpha-numeric only (e.g., govid456.pdf)<br>Size must be between 5KB and 3MB"></i>
                                         <span class="small text-white-50 fw-normal text-truncate-hint" style="font-size: 0.75rem;" 
                                               data-bs-toggle="tooltip" 
                                               title="(Aadhaar/License/Passport/Voter ID/ [Upload J visa here, if non-Indian journalist])">
@@ -347,7 +338,7 @@
                                     <label class="form-label">
                                         Organisation ID Card *
                                         <i class="fas fa-info-circle ms-1 info-icon" data-bs-toggle="tooltip" data-bs-html="true" 
-                                           title="Format: .pdf, .jpg, or .jpeg<br>File name: alpha-numeric only (e.g., orgid789.jpg)<br>Max size: 1MB"></i>
+                                           title="Format: .pdf, .jpg, or .jpeg<br>File name: alpha-numeric only (e.g., orgid789.jpg)<br>Size must be between 5KB and 3MB"></i>
                                     </label>
                                     <input type="file" class="form-control" required>
                                 </div>
@@ -356,7 +347,7 @@
                                     <label class="form-label">
                                         Editor's Letter / Self Declaration *
                                         <i class="fas fa-info-circle ms-1 info-icon" data-bs-toggle="tooltip" data-bs-html="true" 
-                                           title="Format: .pdf, .jpg, or .jpeg<br>File name: alpha-numeric only (e.g., nomination2025.pdf)<br>Max size: 1MB"></i>
+                                           title="Format: .pdf, .jpg, or .jpeg<br>File name: alpha-numeric only (e.g., nomination2025.pdf)<br>Size must be between 5KB and 3MB"></i>
                                     </label>
                                     <input type="file" class="form-control" required>
                                 </div>
@@ -365,7 +356,7 @@
                                     <label class="form-label">
                                         Proof of Previous Works *
                                         <i class="fas fa-info-circle ms-1 info-icon" data-bs-toggle="tooltip" data-bs-html="true" 
-                                           title="Up to 5 published articles related to film coverage<br>Format: .pdf, .jpg, or .jpeg<br>File name: alpha-numeric only (e.g., work1.pdf)<br>Max size: 1MB per document<br>(Links to videos can be compiled in a pdf)"></i>
+                                           title="Up to 5 published articles related to film coverage<br>Format: .pdf, .jpg, or .jpeg<br>File name: alpha-numeric only (e.g., work1.pdf)<br>Size must be between 5KB and 3MB per document<br>(Links to videos can be compiled in a pdf)"></i>
                                         <span class="small text-white-50 fw-normal ms-1" style="font-size: 0.75rem;">(Combined PDF of samples)</span>
                                     </label>
                                     <input type="file" class="form-control" required>
@@ -375,14 +366,14 @@
                                 <div class="col-12 mt-4">
                                     <div class="form-check custom-checkbox mb-2">
                                         <input class="form-check-input" type="checkbox" id="policy_agreement" required>
-                                        <label class="form-check-label text-white-50 text-capitalize" for="policy_agreement">
+                                        <label class="form-check-label text-white-50" for="policy_agreement">
                                             I have read the <a href="#" class="text-gold"
-                                                style="color: var(--miff-gold);">media accreditation policy</a>
+                                                style="color: var(--miff-gold);">Media Accreditation Policy</a>
                                         </label>
                                     </div>
                                     <div class="form-check custom-checkbox">
                                         <input class="form-check-input" type="checkbox" id="declaration" required>
-                                        <label class="form-check-label text-white-50 text-capitalize" for="declaration">
+                                        <label class="form-check-label text-white-50" for="declaration">
                                             I certify that the information and documents provided above are true to the best of my knowledge. I am also aware that if any information provided by me is found to be false or misleading, it shall lead to disqualification.
                                         </label>
                                     </div>
@@ -417,9 +408,8 @@
     <!-- Footer -->
     <footer class="miff-footer">
         <div class="container">
-            <p class="footer-text mb-2">&copy; 2026 Mumbai International Film Festival. All Rights Reserved.</p>
-            <p class="small text-white-50">Organized by National Film Development Corporation (NFDC), Ministry of
-                Information & Broadcasting, Government of India.</p>
+            <p class="footer-text mb-2">&copy; Press Information Bureau. All Rights Reserved.</p>
+            <p class="small text-white-50">MIFF is organised by National Film Development Corporation, Ministry of Information & Broadcasting, Government of India.</p>
         </div>
     </footer>
 
