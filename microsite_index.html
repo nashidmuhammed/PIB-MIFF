@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MIFF 2026 – 19th Mumbai International Film Festival 2026</title>
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Font Awesome -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+  
+  <!-- Custom MIFF Style -->
+  <link rel="stylesheet" href="css/miff_style.css">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="assets/logos/MIFF_2026_logo.png">
+
+  <style>
+    /* Specific overrides for this page to match MIFF theme */
+    body {
+      background-color: var(--miff-black);
+      color: var(--miff-text);
+    }
+    
+    .top-banner img {
+      width: 100%;
+      height: auto;
+      border-radius: 0;
+      display: block;
+    }
+
+    /* Adjust Header to fit MIFF styling while keeping functionality */
+    .microsite-header {
+      background: rgba(10, 10, 10, 0.9);
+      border-bottom: 1px solid var(--miff-border);
+      backdrop-filter: blur(25px);
+      position: sticky;
+      top: 0;
+      z-index: 1045;
+      transition: all 0.3s ease-in-out;
+    }
+
+    .microsite-header .nav-link {
+      color: var(--miff-text);
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 600;
+      font-size: 0.9rem;
+      letter-spacing: 0.6px;
+      margin-right: 1rem;
+      position: relative;
+      transition: all 0.3s ease;
+      text-transform: uppercase;
+    }
+
+    .microsite-header .nav-link:hover,
+    .microsite-header .nav-link.active {
+      color: var(--miff-gold);
+    }
+
+    .microsite-header .nav-link::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -4px;
+      width: 0;
+      height: 2px;
+      background: linear-gradient(90deg, var(--miff-gold), var(--miff-gold-dark));
+      transition: width 0.3s ease;
+    }
+
+    .microsite-header .nav-link:hover::after,
+    .microsite-header .nav-link.active::after {
+      width: 100%;
+    }
+
+    .social-icons a {
+      color: var(--miff-gold);
+      font-size: 1.2rem;
+      margin-left: 0.6rem;
+      transition: transform 0.3s ease, color 0.3s ease;
+    }
+
+    .social-icons a:hover {
+      transform: translateY(-3px);
+      color: var(--miff-text);
+    }
+
+    /* Carousel Content */
+    .carousel-content {
+      position: relative;
+      z-index: 1;
+    }
+
+    .carousel-content .carousel-item {
+      height: 500px;
+    }
+
+    .carousel-content .carousel-item img {
+      object-fit: cover;
+      height: 100%;
+      width: 100%;
+      opacity: 0.7;
+    }
+
+    .carousel-caption {
+      background: rgba(18, 18, 18, 0.85);
+      border: 1px solid var(--miff-border);
+      border-radius: 12px;
+      padding: 20px 30px;
+      backdrop-filter: blur(10px);
+      bottom: 40px;
+    }
+
+    .carousel-caption h5 {
+      font-size: 1.75rem;
+      color: var(--miff-gold);
+      margin-bottom: 10px;
+    }
+
+    .carousel-caption p {
+      font-size: 1rem;
+      color: var(--miff-text);
+      margin-bottom: 0;
+    }
+
+    /* Carousel Controls */
+    .carousel-control-prev,
+    .carousel-control-next {
+      width: 50px !important;
+      height: 50px !important;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(18, 18, 18, 0.8) !important;
+      border: 1px solid var(--miff-gold);
+      border-radius: 50%;
+      opacity: 0.8;
+      z-index: 5;
+      transition: all 0.3s ease;
+    }
+
+    .carousel-control-prev:hover,
+    .carousel-control-next:hover {
+      background: var(--miff-gold) !important;
+      opacity: 1;
+    }
+    
+    .carousel-control-prev:hover .carousel-control-prev-icon,
+    .carousel-control-next:hover .carousel-control-next-icon {
+      filter: invert(1);
+    }
+
+    .carousel-control-prev {
+      left: 20px;
+    }
+
+    .carousel-control-next {
+      right: 20px;
+    }
+
+    .carousel-control-prev-icon,
+    .carousel-control-next-icon {
+      width: 1.5rem;
+      height: 1.5rem;
+    }
+
+    /* Stories Section */
+    .stories-section {
+      padding: 80px 0;
+      position: relative;
+      z-index: 1;
+      background-color: transparent;
+    }
+
+    .stories-section h2 {
+      color: var(--miff-gold);
+    }
+
+    .story-card {
+      background: var(--miff-dark-gray) !important;
+      border: 1px solid var(--miff-border) !important;
+      border-radius: 12px !important;
+      overflow: hidden;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .story-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8), 0 0 15px rgba(252, 196, 25, 0.2);
+      border-color: var(--miff-gold) !important;
+    }
+
+    .story-card img {
+      height: 180px;
+      object-fit: cover;
+      border-bottom: 1px solid var(--miff-border);
+    }
+
+    .story-card .card-body {
+      padding: 20px;
+    }
+
+    .story-card .card-title {
+      color: var(--miff-gold);
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin-bottom: 10px;
+      transition: color 0.3s ease;
+    }
+    
+    .story-card:hover .card-title {
+      color: var(--miff-gold-dark);
+    }
+
+    .story-card .card-text {
+      color: var(--miff-text-muted) !important;
+    }
+
+    .story-card .text-muted {
+      color: var(--miff-text-muted) !important;
+    }
+
+    /* IFFI Footer matching MIFF */
+    .iffi-footer {
+      background: #080808;
+      border-top: 1px solid #222;
+      position: relative;
+      z-index: 1;
+      padding: 60px 0;
+    }
+    
+    .iffi-footer::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--miff-gold), transparent);
+    }
+
+    .text-gold {
+      color: var(--miff-gold);
+    }
+    
+    .text-gray {
+      color: var(--miff-text-muted);
+    }
+
+    .iffi-footer p {
+      margin: 0;
+      font-size: 0.9rem;
+      color: var(--miff-text-muted);
+      cursor: pointer;
+      transition: color 0.3s ease;
+    }
+
+    .iffi-footer p:hover {
+      color: var(--miff-gold);
+    }
+
+    .social-btn {
+      width: 40px;
+      height: 40px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 50%;
+      border: 1px solid var(--miff-gold);
+      color: var(--miff-gold);
+      font-size: 1.1rem;
+      transition: all 0.3s ease;
+      text-decoration: none;
+    }
+
+    .social-btn:hover {
+      background-color: var(--miff-gold);
+      color: var(--miff-black);
+      transform: translateY(-3px);
+      box-shadow: 0 0 10px rgba(252, 196, 25, 0.4);
+    }
+
+    .logo-img-footer {
+      height: 55px;
+      transition: transform 0.3s ease, filter 0.3s ease;
+    }
+
+    .logo-miff-footer {
+      height: 75px;
+      transition: transform 0.3s ease, filter 0.3s ease;
+    }
+
+    .logo-img-footer.invert-logo {
+      filter: brightness(0) invert(1);
+    }
+
+    .logo-img-footer:hover {
+      transform: scale(1.05);
+      filter: drop-shadow(0 0 8px rgba(255,255,255,0.3));
+    }
+
+    .logo-img-footer.invert-logo:hover {
+      filter: brightness(0) invert(1) drop-shadow(0 0 8px rgba(255,255,255,0.3));
+    }
+
+    .logo-miff-footer:hover {
+      transform: scale(1.05);
+      filter: drop-shadow(0 0 8px rgba(255,252,25,0.4));
+    }
+
+    @media (max-width: 768px) {
+      .nav {
+        justify-content: center !important;
+        margin-bottom: 0.5rem;
+      }
+      .iffi-footer {
+        text-align: center;
+      }
+      .footer-links {
+        margin-bottom: 1.5rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="bg-gradient-overlay"></div>
+
+  <!-- Top Banner Section -->
+  <div class="top-banner">
+    <img src="assets/IFFI PR Banner.png" alt="Press Header Banner" class="img-fluid w-100">
+  </div>
+  
+  <!-- Header -->
+  <header id="stickyHeader" class="microsite-header py-3">
+    <div class="container d-flex justify-content-between align-items-center flex-wrap">
+      <nav class="nav justify-content-center">
+        <a class="nav-link active" href="#">HOME</a>
+        <a class="nav-link" href="iffi_stories.html">IFFI STORIES</a>
+        <a class="nav-link" href="media_interactions.html">MEDIA INTERACTIONS</a>
+        <a class="nav-link" href="iffi_through.html">IFFI THROUGH OUR LENS</a>
+        <a class="nav-link" href="festival_map.html">IFFI MAP</a>
+        <a class="nav-link" href="iffiloid.html">IFFILOID</a>
+      </nav>
+      <div class="social-icons d-none d-lg-flex align-items-center">
+        <a href="https://x.com/PIB_Panaji"><i class="bi bi-twitter-x"></i></a>
+        <a href="https://www.instagram.com/pib_goa/"><i class="bi bi-instagram"></i></a>
+        <a href="https://www.facebook.com/PIBPanaji/"><i class="bi bi-facebook"></i></a>
+        <a href="https://www.youtube.com/channel/UCOZYh-5suiCI3hH-qaqVQqA/videos"><i class="bi bi-youtube"></i></a>
+        <a href="https://wa.me/8976808274" target="_blank">
+          <i class="bi bi-whatsapp"></i>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Carousel -->
+  <section class="carousel-content p-0 m-0">
+    <div id="heroCarousel" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="https://static.pib.gov.in/WriteReadData/specificdocs/photo/2024/nov/ph20241128460601.png"
+            alt="Opening Ceremony">
+          <div class="carousel-caption">
+            <h5>Opening Ceremony – Gala Night</h5>
+            <p>Star-studded evening at Dr. Shyama Prasad Mukherjee Stadium, Goa.</p>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img src="https://static.pib.gov.in/WriteReadData/specificdocs/photo/2024/nov/ph20241128460801.png"
+            alt="Red Carpet">
+          <div class="carousel-caption">
+            <h5>Red Carpet Moments</h5>
+            <p>International luminaries, filmmakers & stars walk the red carpet at IFFI 55.</p>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img src="https://static.pib.gov.in/WriteReadData/specificdocs/photo/2024/nov/ph20241128460101.png"
+            alt="Closing Ceremony">
+          <div class="carousel-caption">
+            <h5>Closing Ceremony & Awards Night</h5>
+            <p>The grand finale celebrating global cinema and award winners.</p>
+          </div>
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+  </section>
+
+  <!-- Recent Stories Carousel -->
+  <section class="stories-section py-5">
+    <div class="container">
+      <h2 class="text-center fw-bold mb-5 text-uppercase">Recent Stories</h2>
+
+      <div id="storiesCarousel" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+
+          <!-- Slide 1 -->
+          <div class="carousel-item active">
+            <div class="row g-4">
+              <!-- Story 1 -->
+              <div class="col-md-4">
+                <a href="https://www.pib.gov.in/PressReleseDetailm.aspx?PRID=2186678"
+                  class="text-decoration-none">
+                  <div class="card h-100 story-card">
+                    <img src="assets/images/story1.jpg" onerror="this.src='assets/default-story.png';"
+                      alt="IFFI 2025 Media Accreditation" class="card-img-top">
+                    <div class="card-body">
+                      <small class="text-muted d-block mb-2"><i class="bi bi-calendar-event"></i>
+                        04-November-2025</small>
+                      <h5 class="card-title">IFFI 2025 Media Accreditation: Deadline Extended to 10th November</h5>
+                      <p class="card-text small">Details extension of media accreditation deadline for the
+                        56th International Film Festival of India 2025.</p>
+                      <span class="btn btn-miff-outline btn-sm mt-2">Read More</span>
+                    </div>
+                  </div>
+                </a>
+              </div>
+
+              <!-- Story 2 -->
+              <div class="col-md-4">
+                <a href="https://www.pib.gov.in/PressReleseDetailm.aspx?PRID=2186864"
+                  class="text-decoration-none">
+                  <div class="card h-100 story-card">
+                    <img src="assets/images/story2.jpg" onerror="this.src='assets/default-story.png';"
+                      alt="Press Release: Press Information Bureau" class="card-img-top">
+                    <div class="card-body">
+                      <small class="text-muted d-block mb-2"><i class="bi bi-calendar-event"></i>
+                        31-December-2024</small>
+                      <h5 class="card-title">Press Release: Press Information Bureau</h5>
+                      <p class="card-text small">Overview of the 56th edition of IFFI scheduled for 20–28 Nov
+                        2025 in Panaji, Goa.</p>
+                      <span class="btn btn-miff-outline btn-sm mt-2">Read More</span>
+                    </div>
+                  </div>
+                </a>
+              </div>
+
+              <!-- Story 3 -->
+              <div class="col-md-4">
+                <a href="https://www.pib.gov.in/PressReleasePage.aspx?PRID=2179039"
+                  class="text-decoration-none">
+                  <div class="card h-100 story-card">
+                    <img src="assets/images/story3.jpg" onerror="this.src='assets/default-story.png';"
+                      alt="Media Accreditation opens for 56th IFFI" class="card-img-top">
+                    <div class="card-body">
+                      <small class="text-muted d-block mb-2"><i class="bi bi-calendar-event"></i>
+                        13-October-2025</small>
+                      <h5 class="card-title">Media Accreditation opens for 56th International Film Festival of India
+                      </h5>
+                      <p class="card-text small">Announcement of accreditation portal opening, Film
+                        Appreciation Course details, and accreditation process.</p>
+                      <span class="btn btn-miff-outline btn-sm mt-2">Read More</span>
+                    </div>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Slide 2 -->
+          <div class="carousel-item">
+            <div class="row g-4">
+
+              <!-- Story 4 -->
+              <div class="col-md-4">
+                <a href="https://www.pib.gov.in/PressReleasePage.aspx?PRID=2183748"
+                  class="text-decoration-none">
+                  <div class="card h-100 story-card">
+                    <img src="assets/images/story4.jpg" onerror="this.src='assets/default-story.png';"
+                      alt="Media Accreditation for 56th IFFI Open Till 5th November" class="card-img-top">
+                    <div class="card-body">
+                      <small class="text-muted d-block mb-2"><i class="bi bi-calendar-event"></i>
+                        28-October-2025</small>
+                      <h5 class="card-title">Media Accreditation for 56th IFFI Open Till 5th November</h5>
+                      <p class="card-text small">Reminder about the accreditation window with festival
+                        highlights and support details.</p>
+                      <span class="btn btn-miff-outline btn-sm mt-2">Read More</span>
+                    </div>
+                  </div>
+                </a>
+              </div>
+
+              <!-- Story 5 -->
+              <div class="col-md-4">
+                <a href="https://www.pib.gov.in/PressReleasePage.aspx?PRID=2145796"
+                  class="text-decoration-none">
+                  <div class="card h-100 story-card">
+                    <img src="assets/images/story5.jpg" onerror="this.src='assets/default-story.png';"
+                      alt="First Meeting of the 56th IFFI Steering Committee" class="card-img-top">
+                    <div class="card-body">
+                      <small class="text-muted d-block mb-2"><i class="bi bi-calendar-event"></i> 17-July-2025</small>
+                      <h5 class="card-title">First Meeting of the 56th IFFI Steering Committee Held in Mumbai</h5>
+                      <p class="card-text small">Details of the strategic planning and committee members for
+                        IFFI 2025.</p>
+                      <span class="btn btn-miff-outline btn-sm mt-2">Read More</span>
+                    </div>
+                  </div>
+                </a>
+              </div>
+
+              <!-- Empty filler column for layout balance -->
+              <div class="col-md-4 d-none d-md-block"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Controls -->
+        <button class="carousel-control-prev" type="button" data-bs-target="#storiesCarousel" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#storiesCarousel" data-bs-slide="next">
+          <span class="carousel-control-next-icon"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+
+      <!-- View More Button -->
+      <div class="text-center mt-5">
+        <a href="iffi_stories.html" class="btn btn-miff-primary px-4 py-2" style="max-width: 200px; margin: 0 auto; display: inline-block;">
+          View More
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="iffi-footer">
+    <div class="container text-center text-md-start">
+      <div class="row align-items-center gy-4">
+
+        <!-- Organized & Supported By -->
+        <div class="col-12 col-md-8">
+          <h6 class="mb-4 fw-bold text-uppercase text-gold text-center text-md-start">
+            Organized & Supported By
+          </h6>
+          <ul class="nav justify-content-center justify-content-md-start align-items-center flex-wrap">
+            <li class="nav-item mx-3 my-2">
+              <a href="https://mib.gov.in" target="_blank">
+                <img src="assets/logos/MIB.png" alt="MIB" class="logo-img-footer invert-logo">
+              </a>
+            </li>
+            <li class="nav-item mx-3 my-2">
+              <a href="https://www.pib.gov.in/" target="_blank">
+                <img src="assets/logos/pib-logo.png" alt="PIB" class="logo-img-footer">
+              </a>
+            </li>
+            <li class="nav-item mx-3 my-2">
+              <a href="https://www.nfdcindia.com/" target="_blank">
+                <img src="assets/logos/NFDC (blue)-ai.png" alt="NFDC" class="logo-img-footer invert-logo">
+              </a>
+            </li>
+            <li class="nav-item mx-3 my-2">
+              <a href="https://esg.co.in/" target="_blank">
+                <img src="assets/logos/esg.png" alt="ESG" class="logo-img-footer ">
+              </a>
+            </li>
+            <li class="nav-item mx-3 my-2">
+              <a href="https://miff.gov.in/" target="_blank">
+                <img src="assets/logos/MIFF_2026_logo.png" alt="MIFF 2026" class="logo-miff-footer">
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Follow Us -->
+        <div class="col-12 col-md-4 text-center text-md-end">
+          <h6 class="text-uppercase text-gold fw-semibold mb-3">Follow Us On</h6>
+          <div class="social-icons d-flex justify-content-md-end justify-content-center gap-3 mb-3">
+            <a href="https://x.com/PIB_Panaji" class="social-btn"><i class="bi bi-twitter-x"></i></a>
+            <a href="https://www.instagram.com/pib_goa/" class="social-btn"><i class="bi bi-instagram"></i></a>
+            <a href="https://www.facebook.com/PIBPanaji/" class="social-btn"><i class="bi bi-facebook"></i></a>
+            <a href="https://www.youtube.com/channel/UCOZYh-5suiCI3hH-qaqVQqA/videos" class="social-btn"><i
+                class="bi bi-youtube"></i></a>
+          </div>
+
+          <p class="mb-0 text-gray small">
+            Reach out to us on
+            <a href="mailto:miff.mediadesk@pib.gov.in" class="text-decoration-none text-gold fw-semibold">
+              miff.mediadesk@pib.gov.in
+            </a>
+          </p>
+        </div>
+
+      </div>
+
+      <hr class="border-secondary opacity-50 my-4">
+
+      <div class="text-center">
+        <p class="small mb-0 text-gray">
+          &copy; 2026 Mumbai International Film Festival. All Rights Reserved.
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
