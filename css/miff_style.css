@@ -256,6 +256,10 @@ section {
     .miff-text-logo {
         font-size: 1.2rem;
     }
+
+    .miff-card-title {
+        font-size: 1.5rem;
+    }
 }
 
 /* Form Containers */
@@ -302,8 +306,14 @@ section {
 .miff-card-title {
     color: var(--miff-yellow);
     text-transform: uppercase;
-    font-size: 1.5rem;
+    font-size: 2.2rem;
+    line-height: 1.35;
     margin-bottom: 10px;
+}
+
+.login-card .miff-card-title {
+    font-size: 1.35rem;
+    line-height: 1.4;
 }
 
 /* Buttons */
