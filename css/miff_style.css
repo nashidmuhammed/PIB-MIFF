@@ -65,7 +65,8 @@ h6 {
         url('../assets/PosterAssets/Asset%2012.png') no-repeat 10% 85% / 14vw,
         url('../assets/PosterAssets/Asset%208.png') no-repeat 50% 10% / 8vw,
         url('../assets/PosterAssets/Asset%2014.png') no-repeat 50% 90% / 10vw,
-        url('../assets/PosterAssets/Asset%201.png') no-repeat 25% 50% / 12vw;
+        url('../assets/PosterAssets/Asset%201.png') no-repeat 25% 50% / 12vw,
+        url('../assets/PosterAssets/Asset%207.png') no-repeat 85% 50% / 12vw;
     opacity: 0.25; /* Subtle background integration */
     z-index: -1;
     pointer-events: none;
@@ -530,14 +531,16 @@ section {
 
 .section-divider span {
     position: absolute;
-    top: -12px;
+    top: -15px;
     left: 20px;
     background: var(--miff-dark-gray);
-    padding: 0 10px;
+    padding: 0 15px;
     color: var(--miff-yellow);
-    font-size: 0.8rem;
-    font-weight: 700;
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 600;
     text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
 .note-box {
