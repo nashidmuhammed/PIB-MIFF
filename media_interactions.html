@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MIFF 2026 – Media Interactions</title>
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Font Awesome -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+
+  <!-- Custom MIFF Style -->
+  <link rel="stylesheet" href="css/miff_style.css">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="assets/logos/MIFF_2026_logo.png">
+
+  <style>
+    /* Specific overrides for this page to match MIFF theme */
+    body {
+      background-color: var(--miff-black);
+      color: var(--miff-text);
+    }
+
+    .top-banner img {
+      width: 100%;
+      height: auto;
+      border-radius: 0;
+      display: block;
+    }
+
+    /* Adjust Header to fit MIFF styling while keeping functionality */
+    .microsite-header {
+      background: rgba(10, 10, 10, 0.9);
+      border-bottom: 1px solid var(--miff-border);
+      backdrop-filter: blur(25px);
+      position: sticky;
+      top: 0;
+      z-index: 1045;
+      transition: all 0.3s ease-in-out;
+    }
+
+    .microsite-header .nav-link {
+      color: var(--miff-text);
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 600;
+      font-size: 0.9rem;
+      letter-spacing: 0.6px;
+      margin-right: 1rem;
+      position: relative;
+      transition: all 0.3s ease;
+      text-transform: uppercase;
+    }
+
+    .microsite-header .nav-link:hover,
+    .microsite-header .nav-link.active {
+      color: var(--miff-yellow);
+    }
+
+    .microsite-header .nav-link::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -4px;
+      width: 0;
+      height: 2px;
+      background: linear-gradient(90deg, var(--miff-red), var(--miff-red-dark));
+      transition: width 0.3s ease;
+    }
+
+    .microsite-header .nav-link:hover::after,
+    .microsite-header .nav-link.active::after {
+      width: 100%;
+    }
+
+    .social-icons a {
+      color: var(--miff-yellow);
+      font-size: 1.2rem;
+      margin-left: 0.6rem;
+      transition: transform 0.3s ease, color 0.3s ease;
+    }
+
+    .social-icons a:hover {
+      transform: translateY(-3px);
+      color: var(--miff-text);
+    }
+
+    /* Coming Soon Section */
+    .coming-soon-section {
+      padding: 120px 0;
+      position: relative;
+      z-index: 1;
+      background-color: transparent;
+      min-height: 50vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .coming-soon-card {
+      background: var(--miff-dark-gray);
+      border: 1px solid var(--miff-border);
+      border-radius: 15px;
+      padding: 60px 40px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+      backdrop-filter: blur(10px);
+    }
+
+    .coming-soon-section h2 {
+      color: var(--miff-yellow);
+      font-family: 'Oswald', sans-serif;
+      font-size: 2.5rem;
+      letter-spacing: 1px;
+    }
+
+    .coming-soon-card p {
+      color: rgba(255, 255, 255, 0.7) !important;
+    }
+
+    /* IFFI Footer matching MIFF */
+    .iffi-footer {
+      background: #080808;
+      border-top: 1px solid #222;
+      position: relative;
+      z-index: 1;
+      padding: 60px 0;
+    }
+
+    .iffi-footer::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--miff-yellow), transparent);
+    }
+
+    .text-gold {
+      color: var(--miff-yellow);
+    }
+
+    .text-gray {
+      color: var(--miff-text-muted);
+    }
+
+    .iffi-footer p {
+      margin: 0;
+      font-size: 0.9rem;
+      color: var(--miff-text-muted);
+      cursor: pointer;
+      transition: color 0.3s ease;
+    }
+
+    .iffi-footer p:hover {
+      color: var(--miff-yellow);
+    }
+
+    .social-btn {
+      width: 40px;
+      height: 40px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 50%;
+      border: 1px solid var(--miff-yellow);
+      color: var(--miff-yellow);
+      font-size: 1.1rem;
+      transition: all 0.3s ease;
+      text-decoration: none;
+    }
+
+    .social-btn:hover {
+      background-color: var(--miff-yellow);
+      color: var(--miff-navy);
+      transform: translateY(-3px);
+      box-shadow: 0 0 10px rgba(252, 224, 59, 0.4);
+    }
+
+    .logo-img-footer {
+      height: 55px;
+      transition: transform 0.3s ease, filter 0.3s ease;
+    }
+
+    .logo-miff-footer {
+      height: 75px;
+      transition: transform 0.3s ease, filter 0.3s ease;
+    }
+
+    .logo-img-footer.invert-logo {
+      filter: brightness(0) invert(1);
+    }
+
+    .logo-img-footer:hover {
+      transform: scale(1.05);
+      filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.3));
+    }
+
+    .logo-img-footer.invert-logo:hover {
+      filter: brightness(0) invert(1) drop-shadow(0 0 8px rgba(255, 255, 255, 0.3));
+    }
+
+    .logo-miff-footer:hover {
+      transform: scale(1.05);
+      filter: drop-shadow(0 0 8px rgba(255, 252, 25, 0.4));
+    }
+
+    @media (max-width: 768px) {
+      .nav {
+        justify-content: center !important;
+        margin-bottom: 0.5rem;
+      }
+
+      .iffi-footer {
+        text-align: center;
+      }
+
+      .footer-links {
+        margin-bottom: 1.5rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="bg-gradient-overlay"></div>
+
+  <!-- Top Banner Section -->
+  <div class="top-banner">
+    <img src="assets/IFFI PR Banner.png" alt="Press Header Banner" class="img-fluid w-100">
+  </div>
+
+  <!-- Header -->
+  <header id="stickyHeader" class="microsite-header py-3">
+    <div class="container d-flex justify-content-between align-items-center flex-wrap">
+      <nav class="nav justify-content-center">
+        <a class="nav-link" href="microsite_index.html">HOME</a>
+        <a class="nav-link" href="miff_stories.html">MIFF STORIES</a>
+        <a class="nav-link active" href="media_interactions.html">MEDIA INTERACTIONS</a>
+        <a class="nav-link" href="iffi_through.html">MIFF THROUGH OUR LENS</a>
+      </nav>
+      <div class="social-icons d-none d-lg-flex align-items-center">
+        <a href="https://x.com/PIB_Panaji"><i class="bi bi-twitter-x"></i></a>
+        <a href="https://www.instagram.com/pib_goa/"><i class="bi bi-instagram"></i></a>
+        <a href="https://www.facebook.com/PIBPanaji/"><i class="bi bi-facebook"></i></a>
+        <a href="https://www.youtube.com/channel/UCOZYh-5suiCI3hH-qaqVQqA/videos"><i class="bi bi-youtube"></i></a>
+        <a href="https://wa.me/8976808274" target="_blank">
+          <i class="bi bi-whatsapp"></i>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Coming Soon Section -->
+  <section class="coming-soon-section">
+    <div class="container text-center">
+      <div class="coming-soon-card mx-auto" style="max-width: 800px;">
+        <h2 class="fw-bold text-uppercase mb-4">Content Coming Soon!</h2>
+        <p class="lead text-muted mx-auto mb-0">
+          We are curating an extensive collection of official press releases, photo galleries, and media interactions related to the 
+          <strong class="text-white">Mumbai International Film Festival (MIFF)</strong>. Please check back shortly to access these updates and insights.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="iffi-footer">
+    <div class="container text-center text-md-start">
+      <div class="row align-items-center gy-4">
+
+        <!-- Organized & Supported By -->
+        <div class="col-12 col-md-8">
+          <h6 class="mb-4 fw-bold text-uppercase text-gold text-center text-md-start">
+            Organized & Supported By
+          </h6>
+          <ul class="nav justify-content-center justify-content-md-start align-items-center flex-wrap">
+            <li class="nav-item mx-3 my-2">
+              <a href="https://mib.gov.in" target="_blank">
+                <img src="assets/logos/MIB.png" alt="MIB" class="logo-img-footer invert-logo">
+              </a>
+            </li>
+            <li class="nav-item mx-3 my-2">
+              <a href="https://www.pib.gov.in/" target="_blank">
+                <img src="assets/logos/pib-logo.png" alt="PIB" class="logo-img-footer">
+              </a>
+            </li>
+            <li class="nav-item mx-3 my-2">
+              <a href="https://www.nfdcindia.com/" target="_blank">
+                <img src="assets/logos/NFDC (blue)-ai.png" alt="NFDC" class="logo-img-footer invert-logo">
+              </a>
+            </li>
+            <li class="nav-item mx-3 my-2">
+              <a href="https://esg.co.in/" target="_blank">
+                <img src="assets/logos/esg.png" alt="ESG" class="logo-img-footer ">
+              </a>
+            </li>
+            <li class="nav-item mx-3 my-2">
+              <a href="https://miff.gov.in/" target="_blank">
+                <img src="assets/logos/MIFF_2026_logo.png" alt="MIFF 2026" class="logo-miff-footer">
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Follow Us -->
+        <div class="col-12 col-md-4 text-center text-md-end">
+          <h6 class="text-uppercase text-gold fw-semibold mb-3">Follow Us On</h6>
+          <div class="social-icons d-flex justify-content-md-end justify-content-center gap-3 mb-3">
+            <a href="https://x.com/PIB_Panaji" class="social-btn"><i class="bi bi-twitter-x"></i></a>
+            <a href="https://www.instagram.com/pib_goa/" class="social-btn"><i class="bi bi-instagram"></i></a>
+            <a href="https://www.facebook.com/PIBPanaji/" class="social-btn"><i class="bi bi-facebook"></i></a>
+            <a href="https://www.youtube.com/channel/UCOZYh-5suiCI3hH-qaqVQqA/videos" class="social-btn"><i
+                class="bi bi-youtube"></i></a>
+          </div>
+
+          <p class="mb-0 text-gray small">
+            Reach out to us on
+            <a href="mailto:miff.mediadesk@pib.gov.in" class="text-decoration-none text-gold fw-semibold">
+              miff.mediadesk@pib.gov.in
+            </a>
+          </p>
+        </div>
+
+      </div>
+
+      <hr class="border-secondary opacity-50 my-4">
+
+      <div class="text-center">
+        <!-- <p class="small mb-0 text-gray">
+          &copy; 2026 Mumbai International Film Festival. All Rights Reserved.
+        </p> -->
+        <p class="footer-text mb-2">&copy; Press Information Bureau. All Rights Reserved.</p>
+        <p class="small text-white-50">MIFF is organised by National Film Development Corporation, Ministry of
+          Information & Broadcasting, Government of India.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    window.addEventListener("scroll", function () {
+      const header = document.getElementById("stickyHeader");
+      const bannerHeight = document.querySelector(".top-banner").offsetHeight;
+      if (window.scrollY > bannerHeight - 50) {
+        header.classList.add("fixed");
+        document.body.classList.add("has-fixed-header");
+      } else {
+        header.classList.remove("fixed");
+        document.body.classList.remove("has-fixed-header");
+      }
+    });
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
