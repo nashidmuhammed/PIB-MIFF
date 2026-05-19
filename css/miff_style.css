@@ -1,5 +1,16 @@
 /* MIFF Global Design System */
-@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+/* Main Condensed Catalogue Font: Chalet Comprime */
+@font-face {
+    font-family: 'ChaletComprime';
+    src: url('../assets/fonts/ChaletComprime.woff2') format('woff2'),
+         url('../assets/fonts/ChaletComprime.woff') format('woff'),
+         url('../assets/fonts/ChaletComprime.ttf') format('truetype'),
+         url('../assets/fonts/ChaletComprime.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
 
 :root {
     --miff-navy: #1D203B;
@@ -21,7 +32,7 @@
 body {
     background-color: var(--miff-navy);
     color: var(--miff-text);
-    font-family: 'Inter', sans-serif;
+    font-family: 'Poppins', sans-serif;
     margin: 0;
     padding: 0;
     overflow-x: hidden;
@@ -33,11 +44,12 @@ h3,
 h4,
 h5,
 h6 {
-    font-family: 'Oswald', sans-serif;
+    font-family: 'ChaletComprime', 'Oswald', sans-serif;
     font-weight: 600;
     letter-spacing: 1px;
     text-transform: uppercase;
-    text-shadow: 0 2px 10px rgba(232, 51, 78, 0.2); /* Subtle red shadow */
+    text-shadow: 0 2px 10px rgba(232, 51, 78, 0.2);
+    /* Subtle red shadow */
 }
 
 /* Background Decoration */
@@ -58,7 +70,7 @@ h6 {
     left: -5%;
     width: 110%;
     height: 110%;
-    background: 
+    background:
         url('../assets/PosterAssets/Asset%2016.png') no-repeat 5% 15% / 15vw,
         url('../assets/PosterAssets/Asset%203.png') no-repeat 90% 85% / 18vw,
         url('../assets/PosterAssets/Asset%206.png') no-repeat 85% 15% / 12vw,
@@ -67,15 +79,21 @@ h6 {
         url('../assets/PosterAssets/Asset%2014.png') no-repeat 50% 90% / 10vw,
         url('../assets/PosterAssets/Asset%201.png') no-repeat 25% 50% / 12vw,
         url('../assets/PosterAssets/Asset%207.png') no-repeat 85% 50% / 12vw;
-    opacity: 0.25; /* Subtle background integration */
+    opacity: 0.25;
+    /* Subtle background integration */
     z-index: -1;
     pointer-events: none;
     animation: floatingBackground 25s ease-in-out infinite alternate;
 }
 
 @keyframes floatingBackground {
-    0% { transform: scale(1) translate(0, 0); }
-    100% { transform: scale(1.05) translate(15px, 20px); }
+    0% {
+        transform: scale(1) translate(0, 0);
+    }
+
+    100% {
+        transform: scale(1.05) translate(15px, 20px);
+    }
 }
 
 /* Premium Site Header (Pill Style) */
@@ -565,4 +583,133 @@ section {
     margin: 0;
     font-size: 0.85rem;
     color: #ddd;
+}
+
+/* --- Catalogue Theme Integrations --- */
+
+/* Catalogue Style Section Dividers */
+.miff-section-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 3rem;
+}
+
+.miff-section-header h2 {
+    color: var(--miff-red);
+    margin: 0;
+    padding-right: 20px;
+    white-space: nowrap;
+    font-size: 2.2rem;
+}
+
+.miff-section-divider-line {
+    flex-grow: 1;
+    height: 2px;
+    background-color: var(--miff-red);
+}
+
+/* Light Theme Content Sections (Matching Catalogue White Pages) */
+.miff-light-section {
+    background-color: #FFFFFF !important;
+    color: #333333 !important;
+}
+
+.miff-light-section h2 {
+    color: var(--miff-red) !important;
+}
+
+/* Update story card specifically for light sections */
+.miff-light-section .story-card {
+    background: #FFFFFF !important;
+    border: 1px solid #DDDDDD !important;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.miff-light-section .story-card:hover {
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    border-color: var(--miff-red) !important;
+}
+
+.miff-light-section .story-card .card-title {
+    color: var(--miff-navy);
+}
+
+.miff-light-section .story-card:hover .card-title {
+    color: var(--miff-red);
+}
+
+.miff-light-section .story-card .text-muted,
+.miff-light-section .story-card .card-text {
+    color: #666666 !important;
+}
+
+.miff-light-section .story-card .text-gold {
+    color: var(--miff-red);
+    /* Swapping gold for red on light backgrounds for better contrast */
+}
+
+/* Wavy Graphic Divider */
+.miff-wavy-divider {
+    width: 100%;
+    height: 150px;
+    background-color: var(--miff-navy);
+    /* Dark blue from catalog */
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.miff-wavy-divider::before {
+    content: '';
+    position: absolute;
+    width: 150px;
+    height: 100%;
+    left: 5%;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 60'%3E%3Cpath d='M0 30 Q 25 60, 50 30 T 100 30' fill='none' stroke='%23FCE03B' stroke-width='4'/%3E%3Cpath d='M0 50 Q 25 80, 50 50 T 100 50' fill='none' stroke='%23FCE03B' stroke-width='4'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: left center;
+}
+
+.miff-wavy-divider h3 {
+    color: var(--miff-red);
+    font-size: 3rem;
+    margin: 0;
+    letter-spacing: 3px;
+    font-family: 'Oswald', sans-serif;
+    text-transform: uppercase;
+}
+
+/* Imprint Footer Adjustments */
+.iffi-footer.miff-imprint-footer {
+    background-color: var(--miff-navy);
+    border-top: none;
+    position: relative;
+    padding: 80px 0;
+}
+
+.iffi-footer.miff-imprint-footer::before {
+    display: none;
+    /* remove gradient line */
+}
+
+.miff-imprint-footer h6 {
+    color: var(--miff-red) !important;
+    /* CONTENTS red */
+    font-size: 1.2rem;
+    position: relative;
+    display: inline-block;
+    padding-right: 15px;
+    margin-bottom: 2rem !important;
+}
+
+.miff-imprint-footer h6::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 100%;
+    width: 50px;
+    height: 1px;
+    background-color: var(--miff-red);
 }
