@@ -1,0 +1,710 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MIFF 2026 – Press Release</title>
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Font Awesome -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+
+  <!-- Custom MIFF Style -->
+  <link rel="stylesheet" href="css/miff_style.css">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="assets/logos/MIFF_2026_logo.png">
+
+  <style>
+    /* Specific overrides for this page to match MIFF theme */
+    body {
+      background-color: var(--miff-navy);
+      color: var(--miff-text);
+    }
+
+    .top-banner img {
+      width: 100%;
+      height: auto;
+      border-radius: 0;
+      display: block;
+    }
+
+    /* Adjust Header to fit MIFF styling while keeping functionality */
+    .microsite-header {
+      background: rgba(10, 10, 10, 0.9);
+      border-bottom: 1px solid var(--miff-border);
+      backdrop-filter: blur(25px);
+      position: sticky;
+      top: 0;
+      z-index: 1045;
+      transition: all 0.3s ease-in-out;
+    }
+
+    .microsite-header .nav-link {
+      color: var(--miff-text);
+      font-family: 'Poppins', sans-serif;
+      font-weight: 600;
+      font-size: 0.9rem;
+      letter-spacing: 0.6px;
+      margin-right: 1rem;
+      position: relative;
+      transition: all 0.3s ease;
+      text-transform: uppercase;
+    }
+
+    .microsite-header .nav-link:hover,
+    .microsite-header .nav-link.active {
+      color: var(--miff-yellow);
+    }
+
+    .microsite-header .nav-link::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -4px;
+      width: 0;
+      height: 2px;
+      background: linear-gradient(90deg, var(--miff-red), var(--miff-red-dark));
+      transition: width 0.3s ease;
+    }
+
+    .microsite-header .nav-link:hover::after,
+    .microsite-header .nav-link.active::after {
+      width: 100%;
+    }
+
+    .social-icons a {
+      color: var(--miff-yellow);
+      font-size: 1.2rem;
+      margin-left: 0.6rem;
+      transition: transform 0.3s ease, color 0.3s ease;
+    }
+
+    .social-icons a:hover {
+      transform: translateY(-3px);
+      color: var(--miff-text);
+    }
+
+    /* Press Release Specific Styles - MIFF Themed */
+    .press-section {
+      padding-top: 40px;
+      padding-bottom: 100px;
+    }
+
+    .press-wrapper {
+      max-width: 1000px;
+      margin: 0 auto;
+      background: #ffffff;
+      border-radius: 12px;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+      overflow: hidden;
+    }
+
+    .press-header {
+      background: #ffffff;
+      color: var(--miff-navy);
+      text-align: center;
+      padding-bottom: 0;
+      margin-top: 15px;
+      font-size: 2.2rem;
+      font-family: 'ChaletComprime', 'Oswald', sans-serif;
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+
+    .press-sub {
+      font-size: 1.2rem;
+      font-weight: 500;
+      margin-bottom: 15px;
+      color: #333333;
+      text-align: center;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    .press-body {
+      padding: 40px;
+      color: #333333;
+    }
+
+    .press-meta {
+      font-size: 0.95rem;
+      color: var(--miff-red);
+      margin-bottom: 20px;
+      text-align: center;
+      font-weight: 500;
+    }
+
+    .press-content p {
+      color: #444;
+      line-height: 1.8;
+      margin-bottom: 20px;
+      text-align: justify;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    .press-content img {
+      display: block;
+      margin: 30px auto;
+      border-radius: 10px;
+      max-width: 100%;
+      height: auto;
+      object-fit: cover;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .btn-back {
+      background: var(--miff-navy);
+      color: #fff;
+      border-radius: 8px;
+      padding: 10px 20px;
+      font-weight: 600;
+      text-decoration: none;
+      display: inline-block;
+      transition: 0.3s;
+      border: 1px solid var(--miff-navy);
+    }
+
+    .btn-back:hover {
+      background: transparent;
+      color: var(--miff-navy);
+    }
+
+    .press-footer {
+      background: linear-gradient(135deg, var(--miff-navy), #0a0c1a) !important;
+      color: white !important;
+      border-radius: 12px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+    }
+
+    .press-footer .text-warning {
+      color: var(--miff-yellow) !important;
+    }
+
+    .press-footer .border-warning {
+      border-color: var(--miff-red) !important;
+    }
+
+    .social-links a {
+      color: var(--miff-yellow) !important;
+      transition: color 0.3s ease;
+    }
+
+    .social-links a:hover {
+      color: var(--miff-red) !important;
+    }
+
+    /* IFFI Footer matching MIFF */
+    .iffi-footer {
+      background: var(--miff-navy);
+      border-top: none;
+      position: relative;
+      z-index: 1;
+      padding: 60px 0;
+    }
+
+    .text-gold {
+      color: var(--miff-yellow);
+    }
+
+    .text-gray {
+      color: var(--miff-text-muted);
+    }
+
+    .iffi-footer p {
+      margin: 0;
+      font-size: 0.9rem;
+      color: var(--miff-text-muted);
+    }
+
+    .social-btn {
+      width: 40px;
+      height: 40px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 50%;
+      border: 1px solid var(--miff-yellow);
+      color: var(--miff-yellow);
+      font-size: 1.1rem;
+      transition: all 0.3s ease;
+      text-decoration: none;
+    }
+
+    .social-btn:hover {
+      background-color: var(--miff-yellow);
+      color: var(--miff-navy);
+      transform: translateY(-3px);
+      box-shadow: 0 0 10px rgba(252, 224, 59, 0.4);
+    }
+
+    .logo-img-footer {
+      height: 55px;
+      transition: transform 0.3s ease, filter 0.3s ease;
+    }
+
+    .logo-miff-footer {
+      height: 75px;
+      transition: transform 0.3s ease, filter 0.3s ease;
+    }
+
+    .logo-img-footer.invert-logo {
+      filter: brightness(0) invert(1);
+    }
+
+    @media (max-width: 768px) {
+      .press-body {
+        padding: 20px;
+      }
+
+      .press-header {
+        font-size: 1.6rem;
+      }
+
+      .press-sub {
+        font-size: 1.1rem;
+      }
+    }
+
+    /* === Film Roll Badge Styling === */
+    .film-roll-badge {
+      position: absolute;
+      top: 30%;
+      right: 20px;
+      width: 230px;
+      height: 70px;
+      background: repeating-linear-gradient(to right,
+          var(--miff-navy) 0px,
+          var(--miff-navy) 18px,
+          var(--miff-gray) 18px,
+          var(--miff-gray) 36px);
+      border-top: 8px solid var(--miff-red);
+      border-bottom: 8px solid var(--miff-red);
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+      animation: moveFilm 8s linear infinite;
+      z-index: 1050;
+    }
+
+    /* film sprocket holes */
+    .film-roll-badge::before,
+    .film-roll-badge::after {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 10px;
+      background: repeating-linear-gradient(to right,
+          var(--miff-navy) 0px,
+          var(--miff-navy) 10px,
+          var(--miff-yellow) 10px,
+          var(--miff-yellow) 20px);
+      left: 0;
+      z-index: 3;
+    }
+
+    .film-roll-badge::before {
+      top: -4px;
+    }
+
+    .film-roll-badge::after {
+      bottom: -4px;
+    }
+
+    .film-roll-inner {
+      position: relative;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      animation: flicker 2s infinite ease-in-out;
+    }
+
+    .countdown-text {
+      font-family: 'ChaletComprime', 'Oswald', sans-serif;
+      font-size: 1.4rem;
+      letter-spacing: 1px;
+      color: var(--miff-text);
+      text-shadow: 0 0 6px rgba(255, 255, 255, 0.4), 0 0 10px var(--miff-red);
+      white-space: nowrap;
+    }
+
+    /* === Animations === */
+    @keyframes moveFilm {
+      0% {
+        background-position: 0 0;
+      }
+
+      100% {
+        background-position: 120px 0;
+      }
+    }
+
+    @keyframes flicker {
+
+      0%,
+      100% {
+        opacity: 1;
+      }
+
+      50% {
+        opacity: 0.9;
+      }
+
+      25% {
+        opacity: 0.95;
+      }
+
+      75% {
+        opacity: 0.85;
+      }
+    }
+
+    /* === Responsive Adjustments === */
+    @media (max-width: 1500px) {
+      .film-roll-badge {
+        top: 25%;
+        right: 18px;
+        height: 65px;
+      }
+    }
+
+    @media (max-width: 992px) {
+      .film-roll-badge {
+        top: 15%;
+        right: 10px;
+        height: 60px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .film-roll-badge {
+        top: 10%;
+        right: 10px;
+        height: 55px;
+      }
+
+      .countdown-text {
+        font-size: 1.2rem;
+      }
+    }
+
+    @media (max-width: 576px) {
+      .film-roll-badge {
+        top: 10%;
+        right: 5px;
+        height: 50px;
+      }
+
+      .countdown-text {
+        font-size: 1rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="bg-gradient-overlay"></div>
+
+  <!-- Top Banner Section -->
+  <div class="top-banner">
+    <img src="assets/Website Banner Final.png" alt="Press Header Banner" class="img-fluid w-100">
+  </div>
+
+  <!-- Header -->
+  <header id="stickyHeader" class="microsite-header py-3">
+    <div class="container d-flex justify-content-between align-items-center flex-wrap">
+      <nav class="nav justify-content-center">
+        <a class="nav-link" href="microsite_index.html">HOME</a>
+        <a class="nav-link" href="miff_stories.html">MIFF STORIES</a>
+        <a class="nav-link" href="media_interactions.html">MEDIA INTERACTIONS</a>
+        <a class="nav-link" href="iffi_through.html">MIFF THROUGH OUR LENS</a>
+      </nav>
+      <div class="social-icons d-none d-lg-flex align-items-center">
+        <a href="https://x.com/PIBMumbai"><i class="bi bi-twitter-x"></i></a>
+        <a href="https://www.instagram.com/pibmumbai/"><i class="bi bi-instagram"></i></a>
+        <a href="https://www.facebook.com/PIBMumbai"><i class="bi bi-facebook"></i></a>
+        <a href="https://www.youtube.com/@pib_mumbai"><i class="bi bi-youtube"></i></a>
+        <a href="https://wa.me/8976808274" target="_blank">
+          <i class="bi bi-whatsapp"></i>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <div class="miff-wavy-divider"></div>
+
+  <!-- Film Roll Countdown Badge -->
+  <div class="film-roll-badge">
+    <div class="film-roll-inner">
+      <div id="countdown" class="countdown-text">... Days to Go</div>
+    </div>
+  </div>
+
+  <!-- Press Section in Light Mode -->
+  <section class="press-section miff-light-section">
+    <div class="container">
+
+      <!-- Added a back button above the card for easy navigation -->
+      <!-- <div class="mb-4">
+        <a href="miff_stories.html" class="text-decoration-none text-muted fw-semibold">
+          <i class="bi bi-arrow-left me-2"></i>Back to Stories
+        </a>
+      </div> -->
+
+      <div class="press-wrapper shadow-lg">
+        <div class="press-body">
+          <div class="press-header">
+            MIFF 2026 to open with 'Better Man' by Australian film-maker Michael Gracy
+          </div>
+          <br>
+          <div class="press-sub">
+            19th MIFF: Opening Ceremony to celebrate India's cultural and cinematic heritage
+            <br><br>
+            Accessible MIFF's Accessible Opening Ceremony will feature live Indian sign language interpretation
+          </div>
+          <hr class="border-secondary opacity-25">
+          <div class="press-meta">
+            <strong>Posted On:</strong> 28 October 2025 | 12.30 pm | MIFF, Mumbai
+          </div>
+
+          <div class="press-content">
+            <img src="https://static.pib.gov.in/WriteReadData/userfiles/image/19-3-13LV7.jpg"
+              alt="MIFF 2026 Celebration">
+
+            <p>
+              The 19th edition of the Mumbai International Film Festival (MIFF) is all set to commence with a glittering
+              Opening Ceremony in Mumbai. The festivities will commence with the Red-Carpet Premiere of the Opening Film
+              - 'Better Man', directed by Australian filmmaker Michael Gracy.
+            </p>
+            <strong>Opening Film Premiere</strong>
+            <p>
+              The Opening Film Premiere will be attended by Union Minister of Information and Broadcasting, Shri Ashwini
+              Vaishnaw along with Minister of State for Information & Broadcasting, Dr. L. Murugan. The presence of
+              these leaders along with the production team of 'Better Man' underscores the significance of the festival
+              as a cultural and cinematic celebration of global importance.
+            </p>
+            <strong>Star-studded Opening Ceremony</strong>
+            <p>
+              The gala opening ceremony, amidst the presence of cinematic legends, promises to deliver an unforgettable
+              evening of cultural performances that will remain etched in the hearts of cinema lovers for long.
+            </p>
+            <p>
+              The Opening Ceremony will be hosted by popular film personalities Abhishek Banerjee and Bhumi Pednekar.
+              The grand evening will bring together the best of Indian cinema as the 19th MIFF begins its week-long
+              journey of cinematic excellence in 2026. The ceremony will witness the participation of numerous film
+              personalities whose presence will set the tone for the film festival.
+            </p>
+            <p>
+              Iconic filmmakers and creators such as Subhash Ghai, Dinesh Vijan, Amar Kaushik, NM Suresh, RK Selvamani,
+              Ishari Ganeshan, Ravi Kotarakara and lyricist Prasoon Joshi will attend the Opening Ceremony. Renowned
+              actors Nagarjuna, Nitya Menon, Aamla, Vikrant Massey, Rakul Preet, Manushi Chillar, Boman Irani, Rajkummar
+              Rao, Abhishek Banerjee, Jaideep Ahlawat, Randeep Hooda, Sanya Malhotra, Jayam Ravi, Jacky Bhagnani, R.
+              Sarath Kumar, Mukta Barve, Sonalee Kulkarni and Radhakrishnan Parthiban will also be present besides other
+              dignitaries. This dazzling gathering of cinema icons is a resounding affirmation of the festival’s ability
+              to bring together the best of Indian and international film talent.
+            </p>
+            <p>
+              The stellar lineup also includes Sri Sri Ravi Shankar who will inspire attendees with a special address.
+            </p>
+
+            <img src="https://static.pib.gov.in/WriteReadData/userfiles/image/19-3-13LV7.jpg" alt="MIFF Celebration">
+
+            <strong>Special Focus: Australia</strong>
+            <p>This year’s MIFF will feature Australia as the Country of Focus. The Jannawi Dance Clan, an Australian
+              First Nations dance group, will present an enthralling cultural program, promoting international cultural
+              exchange.</p>
+
+            <img src="https://static.pib.gov.in/WriteReadData/userfiles/image/19-3-2V987.jpg" alt="">
+
+          </div>
+          <br>
+          <br>
+          <!-- Three dots divider -->
+          <div class="text-center my-4 fs-3 text-muted">• • •</div>
+
+          <!-- Writers Section -->
+          <div class="text-left text-muted fw-semibold mb-4">
+            <i class="bi bi-camera-reels-fill me-2"></i>
+            PIB MIFF CAST AND CREW | Rajith / Nikita / Debayan / Priti | MIFF 19
+          </div>
+
+          <!-- Press Release Footer -->
+          <div class="press-footer mt-5 p-4 text-center rounded shadow-sm">
+            <p class="text-white fw-semibold px-3" style="font-size: 0.95rem;">
+              Great films resonate through passionate voices. Share your love for cinema with
+              <strong>#MIFF2026</strong>,
+              <strong>#AnythingForFilms</strong> and <strong>#FilmsKeLiyeKuchBhi</strong>.
+              Tag us <strong>@pibmumbai</strong> on Instagram, and we'll help spread your passion!
+              For journalists, bloggers, and vloggers wanting to connect with filmmakers for interviews/interactions,
+              reach out to us at <a href="mailto:miff.mediadesk@pib.gov.in" class="text-decoration-none text-warning">
+                miff.mediadesk@pib.gov.in</a> with the subject line: <strong>Take One with PIB</strong>.
+            </p>
+
+            <!-- Divider -->
+            <hr class="border-warning w-75 mx-auto my-4 opacity-50">
+
+            <!-- Release Info -->
+            <div class="text-white-50 small mb-3">
+              Release ID: <strong>2074762</strong> |
+              Visitor Counter: <strong>2953</strong>
+            </div>
+
+            <!-- Language Links -->
+            <div class="small mb-3 text-white-50">
+              Read this release in:
+              <a href="#" class="link-light text-decoration-none text-warning">Kannada</a>,
+              <a href="#" class="link-light text-decoration-none text-warning">Malayalam</a>,
+              <a href="#" class="link-light text-decoration-none text-warning">Urdu</a>,
+              <a href="#" class="link-light text-decoration-none text-warning">Marathi</a>,
+              <a href="#" class="link-light text-decoration-none text-warning">Hindi</a>,
+              <a href="#" class="link-light text-decoration-none text-warning">Konkani</a>,
+              <a href="#" class="link-light text-decoration-none text-warning">Assamese</a>,
+              <a href="#" class="link-light text-decoration-none text-warning">Punjabi</a>,
+              <a href="#" class="link-light text-decoration-none text-warning">Tamil</a>
+            </div>
+
+            <!-- Social Links -->
+            <div class="d-flex justify-content-center gap-4 flex-wrap social-links mt-4">
+              <a href="https://x.com/PIBMumbai" class="text-decoration-none fw-semibold d-flex align-items-center">
+                <i class="bi bi-twitter-x me-1"></i> /PIBMumbai
+              </a>
+              <a href="https://www.instagram.com/pibmumbai/"
+                class="text-decoration-none fw-semibold d-flex align-items-center">
+                <i class="bi bi-instagram me-1"></i> /pibmumbai
+              </a>
+              <a href="https://www.facebook.com/PIBMumbai"
+                class="text-decoration-none fw-semibold d-flex align-items-center">
+                <i class="bi bi-facebook me-1"></i> /PIBMumbai
+              </a>
+              <a href="https://www.youtube.com/@pib_mumbai"
+                class="text-decoration-none fw-semibold d-flex align-items-center">
+                <i class="bi bi-youtube me-1"></i> /pib_mumbai
+              </a>
+            </div>
+          </div>
+
+          <hr class="my-5 border-secondary opacity-25">
+          <div class="d-flex justify-content-between align-items-center flex-wrap gap-3 px-3">
+            <a href="miff_stories.html" class="btn-back">More MIFF Stories</a>
+            <a href="https://pib.gov.in" target="_blank" class="btn-back">View on PIB Website</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="iffi-footer miff-imprint-footer mt-0">
+    <div class="container text-center text-md-start">
+      <div class="row align-items-center gy-4">
+
+        <!-- Organized & Supported By -->
+        <div class="col-12 col-md-8">
+          <ul class="nav justify-content-center justify-content-md-start align-items-center flex-wrap">
+            <li class="nav-item mx-3 my-2">
+              <a href="https://mib.gov.in" target="_blank">
+                <img src="assets/logos/MIB.png" alt="MIB" class="logo-img-footer invert-logo">
+              </a>
+            </li>
+            <li class="nav-item mx-3 my-2">
+              <a href="https://www.pib.gov.in/" target="_blank">
+                <img src="assets/logos/pib-logo.png" alt="PIB" class="logo-img-footer">
+              </a>
+            </li>
+            <li class="nav-item mx-3 my-2">
+              <a href="https://www.nfdcindia.com/" target="_blank">
+                <img src="assets/logos/NFDC (blue)-ai.png" alt="NFDC" class="logo-img-footer invert-logo">
+              </a>
+            </li>
+            <li class="nav-item mx-3 my-2">
+              <a href="https://miff.gov.in/" target="_blank">
+                <img src="assets/logos/MIFF_2026_logo.png" alt="MIFF 2026" class="logo-miff-footer">
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Follow Us -->
+        <div class="col-12 col-md-4 text-center text-md-end">
+          <h6 class="text-uppercase text-gold fw-semibold mb-3">Follow Us On</h6>
+          <div class="social-icons d-flex justify-content-md-end justify-content-center gap-3 mb-3">
+            <a href="https://x.com/PIBMumbai" class="social-btn"><i class="bi bi-twitter-x"></i></a>
+            <a href="https://www.instagram.com/pibmumbai/" class="social-btn"><i class="bi bi-instagram"></i></a>
+            <a href="https://www.facebook.com/PIBMumbai" class="social-btn"><i class="bi bi-facebook"></i></a>
+            <a href="https://www.youtube.com/@pib_mumbai" class="social-btn"><i class="bi bi-youtube"></i></a>
+          </div>
+
+          <p class="mb-0 text-gray small">
+            Reach out to us on
+            <a href="mailto:miff.mediadesk@pib.gov.in" class="text-decoration-none text-gold fw-semibold">
+              miff.mediadesk@pib.gov.in
+            </a>
+          </p>
+        </div>
+
+      </div>
+
+      <hr class="border-secondary opacity-50 my-4">
+
+      <div class="text-center">
+        <p class="footer-text mb-2">&copy; Press Information Bureau. All Rights Reserved.</p>
+        <p class="small text-white-50">MIFF is organised by National Film Development Corporation, Ministry of
+          Information & Broadcasting, Government of India.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    window.addEventListener("scroll", function () {
+      const header = document.getElementById("stickyHeader");
+      const bannerHeight = document.querySelector(".top-banner").offsetHeight;
+      if (window.scrollY > bannerHeight - 50) {
+        header.classList.add("fixed");
+        document.body.classList.add("has-fixed-header");
+      } else {
+        header.classList.remove("fixed");
+        document.body.classList.remove("has-fixed-header");
+      }
+    });
+
+    // --- MIFF Countdown Script ---
+    // Defined start and end dates for MIFF 2024 to force the "ended" state to display
+    const festivalStart = new Date("2026-06-15T00:00:00").getTime();
+    const festivalEnd = new Date("2026-06-21T23:59:59").getTime();
+    const countdownElement = document.getElementById("countdown");
+
+    const interval = setInterval(() => {
+      const now = new Date().getTime();
+
+      if (now < festivalStart) {
+        // Before festival — show days to go
+        const daysLeft = Math.ceil((festivalStart - now) / (1000 * 60 * 60 * 24));
+        countdownElement.innerHTML = `<span class="">${daysLeft}</span> Day${daysLeft !== 1 ? 's' : ''} to go`;
+
+      } else if (now >= festivalStart && now <= festivalEnd) {
+        // During festival — show "19th MIFF - Day X"
+        const currentDate = new Date();
+        const startDate = new Date(festivalStart);
+        const dayNumber = Math.floor((currentDate - startDate) / (1000 * 60 * 60 * 24)) + 1;
+        countdownElement.innerHTML = `19th MIFF - Day ${dayNumber}`;
+      } else {
+        // After festival — show ended
+        countdownElement.innerHTML = `✨ <span class="ended">MIFF closes but never ends...</span>`;
+
+        const elements = document.querySelectorAll('.film-roll-badge');
+        const newWidth = '350px';
+        elements.forEach(element => {
+          element.style.width = newWidth;
+        });
+
+        clearInterval(interval);
+      }
+    }, 1000);
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
